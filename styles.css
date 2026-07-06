@@ -690,6 +690,10 @@ footer {
   color: var(--accent);
 }
 
+address {
+  font-style: normal;
+}
+
 @media (max-width: 640px) {
   .footer__inner {
     grid-template-columns: 1fr;

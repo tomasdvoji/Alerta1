@@ -164,31 +164,31 @@
         <form id="lead-form" novalidate class="lead-form">
           <div class="form-field">
             <label for="name">Jméno a příjmení</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-            <span class="form-error"></span>
+            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error">
+            <span class="form-error" id="name-error" aria-live="polite"></span>
           </div>
 
           <div class="form-field">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-            <span class="form-error"></span>
+            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+            <span class="form-error" id="email-error" aria-live="polite"></span>
           </div>
 
           <div class="form-field">
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
-            <span class="form-error"></span>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-error">
+            <span class="form-error" id="phone-error" aria-live="polite"></span>
           </div>
 
           <div class="form-field">
             <label for="message">Zpráva <span class="form-field__optional">(nepovinné)</span></label>
-            <textarea id="message" name="message" rows="4" autocomplete="off"></textarea>
-            <span class="form-error"></span>
+            <textarea id="message" name="message" rows="4" autocomplete="off" aria-describedby="message-error"></textarea>
+            <span class="form-error" id="message-error" aria-live="polite"></span>
           </div>
 
           <button type="submit" class="btn lead-form__submit">Odeslat poptávku</button>
 
-          <div class="form-success" hidden>Děkujeme! Ozveme se vám do 24 hodin.</div>
+          <div class="form-success" hidden aria-live="polite">Děkujeme! Ozveme se vám do 24 hodin.</div>
         </form>
       </div>
     </section>
@@ -204,11 +204,13 @@
 
       <div class="footer__col">
         <h3 class="footer__heading">Kontakt</h3>
-        <ul class="footer__list">
-          <li><a href="mailto:info@helion.cz">info@helion.cz</a></li>
-          <li><a href="tel:+420777123456">+420 777 123 456</a></li>
-          <li>Praha</li>
-        </ul>
+        <address>
+          <ul class="footer__list">
+            <li><a href="mailto:info@helion.cz">info@helion.cz</a></li>
+            <li><a href="tel:+420777123456">+420 777 123 456</a></li>
+            <li>Praha</li>
+          </ul>
+        </address>
       </div>
 
       <div class="footer__col">
