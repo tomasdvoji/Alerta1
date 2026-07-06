@@ -310,3 +310,15 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 }
 .tb-tile:nth-child(2) { background: radial-gradient(circle at 70% 40%, rgba(226, 0, 116, 0.12), transparent 60%), var(--bg-raised); }
 .tb-tile:nth-child(3) { background: radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.06), transparent 60%), var(--bg-raised); }
+
+/* ---------- kariéra ---------- */
+.career-panel {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(32px, 6vw, 72px);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(226, 0, 116, 0.16), transparent 60%),
+    var(--bg-raised);
+}
+.career-panel p { max-width: 46rem; margin-inline: auto; }
