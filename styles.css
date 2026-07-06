@@ -179,3 +179,44 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- hero (Aceternity Spotlight port) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+.spotlight {
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 138%;
+  height: 169%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  animation: spotlight 2s ease 0.75s 1 forwards;
+}
+@keyframes spotlight {
+  0%   { opacity: 0; transform: translate(-72%, -62%) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
+}
+@media (min-width: 1024px) { .spotlight { width: 84%; left: 20%; } }
+
+.hero-inner { position: relative; z-index: 2; text-align: center; padding-block: 96px; }
+.hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); max-width: 16ch; margin-inline: auto; }
+.hero-sub {
+  margin: 20px auto 0;
+  max-width: 34rem;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+.hero-cta { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight { opacity: 1; transform: translate(-50%, -40%); }
+}
