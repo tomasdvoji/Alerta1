@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Helion - design tokens & base styles
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bg: #0A1520;
+  --surface: #101F2E;
+  --text: #E8EDF2;
+  --muted: #8FA3B5;
+  --accent: #F5A623;
+  --accent-hover: #FFBE4D;
+  --light-bg: #F4F1EA;
+  --light-text: #12202E;
+
+  /* Typography */
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --size-hero: clamp(2.5rem, 7vw, 4.5rem);
+  --size-section: clamp(1.75rem, 4vw, 2.75rem);
+  --size-body: 1.0625rem;
+  --line-body: 1.65;
+
+  /* Spacing / layout */
+  --section-padding: clamp(4rem, 10vh, 7.5rem);
+  --content-max: 72rem;
+  --radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4,
+p,
+figure,
+blockquote,
+dl, dd {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img, picture, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Base typography
+   -------------------------------------------------------------------------- */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: var(--line-body);
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--size-hero);
+}
+
+h2, h3 {
+  font-size: var(--size-section);
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  padding-block: var(--section-padding);
+  scroll-margin-top: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Layout utilities
+   -------------------------------------------------------------------------- */
+
+.container {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  background-color: transparent;
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
+}
