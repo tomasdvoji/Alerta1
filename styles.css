@@ -151,10 +151,10 @@ section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgb(10 21 32 / 90%);
+  background-color: color-mix(in srgb, var(--bg) 90%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgb(143 163 181 / 12%);
+  border-bottom: 1px solid color-mix(in srgb, var(--muted) 12%, transparent);
 }
 
 .site-header__inner {
@@ -226,7 +226,7 @@ section {
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 1px solid rgb(143 163 181 / 25%);
+  border: 1px solid color-mix(in srgb, var(--muted) 25%, transparent);
   border-radius: 8px;
   background: transparent;
   cursor: pointer;
@@ -301,8 +301,8 @@ section {
   padding-block: clamp(5rem, 14vh, 8rem) clamp(4rem, 10vh, 6rem);
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 90% 55% at 50% 105%, rgb(245 166 35 / 30%), transparent 65%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgb(245 166 35 / 22%), transparent 70%);
+    radial-gradient(ellipse 90% 55% at 50% 105%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 65%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
 }
 
 .hero__inner {
@@ -345,7 +345,7 @@ section {
   font-size: 0.875rem;
   color: var(--muted);
   padding-top: 1.75rem;
-  border-top: 1px solid rgb(143 163 181 / 18%);
+  border-top: 1px solid color-mix(in srgb, var(--muted) 18%, transparent);
   width: 100%;
 }
 
