@@ -322,3 +322,30 @@ h3 { font-size: 1.15rem; font-weight: 600; }
     var(--bg-raised);
 }
 .career-panel p { max-width: 46rem; margin-inline: auto; }
+
+/* ---------- podstránky ---------- */
+.page-head { padding-bottom: 24px; }
+.page-head h1 { font-size: clamp(2rem, 5vw, 3rem); }
+
+.shops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .shops-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .shops-grid { grid-template-columns: 1fr; } }
+
+.shop-card { scroll-margin-top: 90px; padding: 0; overflow: hidden; }
+.shop-card h3 { padding: 18px 22px 0; }
+.shop-card p { padding: 4px 22px 0; font-size: 0.9rem; }
+.shop-card .shop-hours { padding-bottom: 22px; color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+.shop-photo {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(226, 0, 116, 0.14), transparent 65%),
+    linear-gradient(160deg, #191926, #0e0e16);
+  border-bottom: 1px solid var(--border);
+}
+.shop-photo span { color: var(--text-dim); font-weight: 600; font-size: 0.9rem; }

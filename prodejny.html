@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naše prodejny — Alerta s.r.o</title>
+  <meta name="description" content="Sít 8 prodejen Alerta po celé České republice. Navštivte naši prodejnu a poradíme vám osobně s tarify, telefony, internetem i příslušenstvím.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a class="logo" href="index.html">Alerta<span>.</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">☰</button>
+      <ul class="nav-links" id="nav-links" data-nav-links>
+        <li><a href="index.html#prodejny">Prodejny</a></li>
+        <li><a href="index.html#sluzby">Služby</a></li>
+        <li><a href="index.html#tym">Tým</a></li>
+        <li><a href="index.html#kariera">Kariéra</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-head">
+      <div class="container">
+        <span class="eyebrow">Prodejny</span>
+        <h1 class="grad-text">Naše prodejny</h1>
+        <p class="muted">8 prodejen po celé České republice. Přijďte – poradíme vám osobně.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="shops-grid">
+          <!-- TODO: doplnit reálná data (fotky z Googlu, přesné adresy, otevírací doby; telefony se dodají později) -->
+          <article class="card shop-card" id="jablonec">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Jablonec nad Nisou — bude doplněna"><span>Jablonec nad Nisou</span></div>
+            <h3>Jablonec nad Nisou</h3>
+            <p class="muted">Mírové náměstí 12, 466 01 Jablonec nad Nisou</p>
+            <p class="shop-hours">Po–Pá 9:00–17:30 · So 9:00–12:00</p>
+          </article>
+          <article class="card shop-card" id="mlada-boleslav">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Mladá Boleslav — bude doplněna"><span>Mladá Boleslav</span></div>
+            <h3>Mladá Boleslav</h3>
+            <p class="muted">Staroměstské náměstí 8, 293 01 Mladá Boleslav</p>
+            <p class="shop-hours">Po–Pá 9:00–18:00 · So 9:00–12:00</p>
+          </article>
+          <article class="card shop-card" id="teplice">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Teplice — bude doplněna"><span>Teplice</span></div>
+            <h3>Teplice</h3>
+            <p class="muted">Benešovo náměstí 5, 415 01 Teplice</p>
+            <p class="shop-hours">Po–Pá 9:00–17:30</p>
+          </article>
+          <article class="card shop-card" id="hostivar">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Praha-Hostivař — bude doplněna"><span>Praha-Hostivař</span></div>
+            <h3>Praha-Hostivař</h3>
+            <p class="muted">Švehlova 1391/32, 102 00 Praha 10</p>
+            <p class="shop-hours">Po–Pá 9:00–19:00 · So 9:00–14:00</p>
+          </article>
+          <article class="card shop-card" id="litomerice">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Litoměřice — bude doplněna"><span>Litoměřice</span></div>
+            <h3>Litoměřice</h3>
+            <p class="muted">Mírové náměstí 21, 412 01 Litoměřice</p>
+            <p class="shop-hours">Po–Pá 9:00–17:00</p>
+          </article>
+          <article class="card shop-card" id="pisek">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Písek — bude doplněna"><span>Písek</span></div>
+            <h3>Písek</h3>
+            <p class="muted">Velké náměstí 14, 397 01 Písek</p>
+            <p class="shop-hours">Po–Pá 9:00–17:00 · So 9:00–11:30</p>
+          </article>
+          <article class="card shop-card" id="klatovy">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Klatovy — bude doplněna"><span>Klatovy</span></div>
+            <h3>Klatovy</h3>
+            <p class="muted">Náměstí Míru 9, 339 01 Klatovy</p>
+            <p class="shop-hours">Po–Pá 9:00–17:00</p>
+          </article>
+          <article class="card shop-card" id="dejvice">
+            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Praha-Dejvice — bude doplněna"><span>Praha-Dejvice</span></div>
+            <h3>Praha-Dejvice</h3>
+            <p class="muted">Vítězné náměstí 2, 160 00 Praha 6</p>
+            <p class="shop-hours">Po–Pá 9:00–19:00 · So 9:00–14:00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a class="logo" href="index.html">Alerta<span>.</span></a>
+        <p>Oficiální partner T-Mobile Czech Republic</p>
+      </div>
+      <ul>
+        <li><a href="prodejny.html">Prodejny</a></li>
+        <li><a href="tym.html">Tým</a></li>
+        <li><a href="album.html">Fotoalbum</a></li>
+        <li><a href="https://www.prace.cz/nabidka/694781be-ed2d-4bd5-8891-c73213b3a4b1/?rps=2077" target="_blank" rel="noopener">Kariéra</a></li>
+      </ul>
+      <p>© 2026 Alerta s.r.o</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
