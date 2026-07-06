@@ -155,16 +155,69 @@
     </section>
 
     <section id="poptavka">
-      <div class="container">
-        <h2>Nezávazná poptávka</h2>
+      <div class="container poptavka__inner">
+        <div class="poptavka__intro">
+          <h2>Nezávazná poptávka</h2>
+          <p class="poptavka__text">Ozveme se do 24 hodin.</p>
+        </div>
+
+        <form id="lead-form" novalidate class="lead-form">
+          <div class="form-field">
+            <label for="name">Jméno a příjmení</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <span class="form-error"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Zpráva <span class="form-field__optional">(nepovinné)</span></label>
+            <textarea id="message" name="message" rows="4" autocomplete="off"></textarea>
+            <span class="form-error"></span>
+          </div>
+
+          <button type="submit" class="btn lead-form__submit">Odeslat poptávku</button>
+
+          <div class="form-success" hidden>Děkujeme! Ozveme se vám do 24 hodin.</div>
+        </form>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div class="container">
-      <!-- Task 4: patička -->
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <a href="#hero" class="logo">Helion<span class="logo__dot">&#9675;</span></a>
+        <p class="footer__slogan">Solární elektrárny na klíč, od konzultace po servis.</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Kontakt</h3>
+        <ul class="footer__list">
+          <li><a href="mailto:info@helion.cz">info@helion.cz</a></li>
+          <li><a href="tel:+420777123456">+420 777 123 456</a></li>
+          <li>Praha</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Firma</h3>
+        <ul class="footer__list">
+          <li>IČO 12345678</li>
+          <li>&copy; 2026 Helion s.r.o.</li>
+        </ul>
+      </div>
     </div>
   </footer>
 

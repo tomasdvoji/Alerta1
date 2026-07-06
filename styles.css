@@ -12,6 +12,7 @@
   --accent-hover: #FFBE4D;
   --light-bg: #F4F1EA;
   --light-text: #12202E;
+  --error: #FF6B6B;
 
   /* Typography */
   --font-display: "Space Grotesk", sans-serif;
@@ -512,4 +513,186 @@ section {
   font-style: normal;
   color: color-mix(in srgb, var(--light-text) 68%, transparent);
   font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   Poptávka (lead form)
+   -------------------------------------------------------------------------- */
+
+#poptavka {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 70% 60% at 85% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+}
+
+.poptavka__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.poptavka__intro h2 {
+  margin-bottom: 1rem;
+}
+
+.poptavka__text {
+  color: var(--muted);
+  font-size: 1.125rem;
+  max-width: 32ch;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--muted) 16%, transparent);
+  border-radius: var(--radius);
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-field__optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--muted) 30%, transparent);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--muted);
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.form-field input.is-invalid,
+.form-field textarea.is-invalid {
+  border-color: var(--error);
+}
+
+.form-field input.is-invalid:focus-visible,
+.form-field textarea.is-invalid:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--error) 25%, transparent);
+}
+
+.form-error {
+  min-height: 1.1em;
+  font-size: 0.8125rem;
+  color: var(--error);
+}
+
+.form-error:empty {
+  display: none;
+}
+
+.lead-form__submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.form-success {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .poptavka__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+footer {
+  border-top: 1px solid color-mix(in srgb, var(--muted) 14%, transparent);
+  padding-block: clamp(3rem, 6vh, 4rem);
+  background-color: var(--bg);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.footer__col .logo {
+  margin-bottom: 0.75rem;
+}
+
+.footer__slogan {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  max-width: 28ch;
+}
+
+.footer__heading {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.875rem;
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.footer__list a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__list a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
