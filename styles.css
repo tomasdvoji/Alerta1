@@ -5,6 +5,7 @@
   --text: #ededf2;
   --text-dim: #a3a3b2;
   --accent: #E20074;
+  --accent-text: #ff4d9e;
   --accent-soft: rgba(226, 0, 116, 0.14);
   --border: rgba(255, 255, 255, 0.08);
   --radius: 14px;
@@ -44,7 +45,7 @@ a { color: inherit; }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 12px;
 }
 
@@ -141,7 +142,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 @media (max-width: 720px) {
   .nav-toggle { display: block; }
   .nav-links {
-    display: none;
+    display: flex;
     position: absolute;
     top: 64px;
     left: 0;
@@ -152,6 +153,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
     border-bottom: 1px solid var(--border);
     padding: 12px 24px;
   }
+  .js .nav-links { display: none; }
   .nav-links.open { display: flex; }
   .nav-links a { display: block; padding: 12px 0; }
 }
@@ -338,7 +340,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .shop-card { scroll-margin-top: 90px; padding: 0; overflow: hidden; }
 .shop-card h3 { padding: 18px 22px 0; }
 .shop-card p { padding: 4px 22px 0; font-size: 0.9rem; }
-.shop-card .shop-hours { padding-bottom: 22px; color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+.shop-card .shop-hours { padding-bottom: 22px; color: var(--accent-text); font-weight: 600; font-size: 0.85rem; }
 .shop-photo {
   aspect-ratio: 16 / 10;
   display: grid;
