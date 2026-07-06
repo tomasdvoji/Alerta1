@@ -220,3 +220,29 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .spotlight { opacity: 1; transform: translate(-50%, -40%); }
 }
+
+/* ---------- prodejny / mapa ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 880px) { .split { grid-template-columns: 1fr; gap: 40px; } }
+
+.cz-outline {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: var(--border);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.shop-dot {
+  fill: var(--accent);
+  cursor: pointer;
+  transition: r 0.15s ease;
+  filter: drop-shadow(0 0 6px rgba(226, 0, 116, 0.9));
+}
+.cz-map a:hover .shop-dot, .cz-map a:focus .shop-dot { r: 10; }
+.cz-map a:focus { outline: none; }
+.cz-map a:focus .shop-dot { stroke: #fff; stroke-width: 2; }
+.map-note { margin-top: 12px; font-size: 0.85rem; text-align: center; }
