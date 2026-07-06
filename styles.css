@@ -89,7 +89,7 @@ a {
 
 section {
   padding-block: var(--section-padding);
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -139,7 +139,6 @@ section {
 }
 
 .btn--ghost:hover {
-  background-color: transparent;
   border-color: var(--accent-hover);
   color: var(--accent-hover);
 }
@@ -466,7 +465,7 @@ section {
 
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
   margin-bottom: 3.5rem;
   padding-bottom: 3.5rem;
@@ -581,11 +580,6 @@ section {
   font-size: 1rem;
   resize: vertical;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: var(--muted);
 }
 
 .form-field input:focus-visible,
