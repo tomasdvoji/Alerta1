@@ -246,3 +246,24 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .cz-map a:focus { outline: none; }
 .cz-map a:focus .shop-dot { stroke: #fff; stroke-width: 2; }
 .map-note { margin-top: 12px; font-size: 0.85rem; text-align: center; }
+
+/* ---------- služby ---------- */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .svc-grid { grid-template-columns: 1fr; } }
+
+.svc-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.svc-grid h3 { margin-bottom: 6px; }
