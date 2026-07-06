@@ -1,17 +1,19 @@
 // Hamburger menu
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.site-nav');
-toggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('is-open');
-  toggle.setAttribute('aria-expanded', open);
-});
-// Zavřít menu po kliku na kotvu
-nav.addEventListener('click', (e) => {
-  if (e.target.matches('a')) {
-    nav.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-});
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  // Zavřít menu po kliku na kotvu
+  nav.addEventListener('click', (e) => {
+    if (e.target.matches('a')) {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
 
 // Validace formuláře
 const form = document.getElementById('lead-form');
@@ -33,6 +35,8 @@ form.addEventListener('submit', (e) => {
   }
   if (valid) {
     form.hidden = true;
-    document.querySelector('.form-success').hidden = false;
+    const successEl = document.querySelector('.form-success');
+    successEl.hidden = false;
+    successEl.focus();
   }
 });
