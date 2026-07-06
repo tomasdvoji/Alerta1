@@ -267,3 +267,46 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   margin-bottom: 16px;
 }
 .svc-grid h3 { margin-bottom: 6px; }
+
+/* ---------- tým ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
+
+.team-card { text-align: center; }
+.avatar {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #3a3a4a, #1c1c28);
+  border: 1px solid var(--border);
+}
+.team-card h3 { font-size: 1rem; }
+.team-card p { font-size: 0.85rem; }
+
+/* ---------- teambuildingy ---------- */
+.tb-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.tb-tile {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(226, 0, 116, 0.18), transparent 60%),
+    var(--bg-raised);
+}
+.tb-tile:nth-child(2) { background: radial-gradient(circle at 70% 40%, rgba(226, 0, 116, 0.12), transparent 60%), var(--bg-raised); }
+.tb-tile:nth-child(3) { background: radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.06), transparent 60%), var(--bg-raised); }
