@@ -1,42 +1,21 @@
-// Hamburger menu
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.site-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
-  });
-  // Zavřít menu po kliku na kotvu
-  nav.addEventListener('click', (e) => {
-    if (e.target.matches('a')) {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
+// Alerta — shared interactions
+(function () {
+  "use strict";
 
-// Validace formuláře
-const form = document.getElementById('lead-form');
-const fields = {
-  name:  { test: (v) => v.trim().length >= 3, msg: 'Vyplňte prosím jméno a příjmení.' },
-  email: { test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: 'Zadejte platný e-mail.' },
-  phone: { test: (v) => /^[+\d][\d\s]{8,}$/.test(v.trim()), msg: 'Zadejte platné telefonní číslo.' },
-};
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  let valid = true;
-  for (const [id, { test, msg }] of Object.entries(fields)) {
-    const input = form.elements[id];
-    const error = input.closest('.form-field').querySelector('.form-error');
-    const ok = test(input.value);
-    error.textContent = ok ? '' : msg;
-    input.classList.toggle('is-invalid', !ok);
-    if (!ok) valid = false;
+  // Mobile nav toggle
+  var toggle = document.querySelector("[data-nav-toggle]");
+  var links = document.querySelector("[data-nav-links]");
+  if (toggle && links) {
+    toggle.addEventListener("click", function () {
+      var open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
   }
-  if (valid) {
-    form.hidden = true;
-    const successEl = document.querySelector('.form-success');
-    successEl.hidden = false;
-    successEl.focus();
-  }
-});
+})();

@@ -3,226 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Helion instaluje solární elektrárny na klíč: konzultace, návrh na míru, instalace i servis. Snižte účty za elektřinu a získejte energetickou nezávislost.">
-  <title>Helion — Solární elektrárny na klíč</title>
+  <title>Alerta s.r.o — Telefonní svět bez starostí</title>
+  <meta name="description" content="Alerta s.r.o je oficiálním partnerem T-Mobile Czech Republic. Tarify, telefony, internet i příslušenství — vše pod jednou střechou.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="#hero" class="logo">Helion<span class="logo__dot">&#9675;</span></a>
-
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Otevřít menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav">
-        <ul class="site-nav__list">
-          <li><a href="#vyhody">Výhody</a></li>
-          <li><a href="#postup">Jak to probíhá</a></li>
-          <li><a href="#reference">Reference</a></li>
-          <li><a href="#poptavka">Kontakt</a></li>
-        </ul>
-        <a href="#poptavka" class="btn site-nav__cta">Nezávazná poptávka</a>
-      </nav>
+  <header class="site-nav">
+    <div class="container">
+      <a class="logo" href="index.html">Alerta<span>.</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">☰</button>
+      <ul class="nav-links" id="nav-links" data-nav-links>
+        <li><a href="#prodejny">Prodejny</a></li>
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#tym">Tým</a></li>
+        <li><a href="#kariera">Kariéra</a></li>
+      </ul>
     </div>
   </header>
 
-  <main>
-
-    <section id="hero">
-      <div class="container hero__inner">
-        <p class="hero__eyebrow">Solární elektrárny na klíč</p>
-        <h1 class="hero__heading">Vyrábějte si vlastní elektřinu ze slunce.</h1>
-        <p class="hero__subtext">Snižte účty za elektřinu až o desítky procent a získejte nezávislost na dodavatelích. Návrh, instalaci i servis zajišťujeme kompletně sami.</p>
-        <div class="hero__actions">
-          <a href="#poptavka" class="btn">Nezávazná poptávka</a>
-          <a href="#postup" class="btn btn--ghost">Jak to probíhá &rarr;</a>
-        </div>
-        <p class="hero__trust">500+ instalací &middot; 12 let na trhu &middot; záruka 25 let na panely</p>
-      </div>
-    </section>
-
-    <section id="vyhody">
-      <div class="container">
-        <h2>Výhody</h2>
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M13 2 L4 14h6l-1 8 9-12h-6z" />
-            </svg>
-            <h3>Nižší účty za elektřinu</h3>
-            <p>Vlastní výroba ze slunce snižuje odběr ze sítě. Úspora na účtech až 70 %.</p>
-          </div>
-          <div class="benefit-card">
-            <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 3v18M3 12h18" />
-            </svg>
-            <h3>Energetická nezávislost</h3>
-            <p>Méně se spoléháte na dodavatele a rostoucí ceny energií. Elektřinu si vyrábíte sami.</p>
-          </div>
-          <div class="benefit-card">
-            <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 4h16v16H4z" />
-              <path d="M9 9h6v6H9z" />
-            </svg>
-            <h3>Dotace NZÚ</h3>
-            <p>Papírování a žádost o dotaci vyřídíme za vás od začátku do konce.</p>
-          </div>
-          <div class="benefit-card">
-            <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 17l6-6 4 4 8-8" />
-              <path d="M15 7h6v6" />
-            </svg>
-            <h3>Návratnost 6–8 let</h3>
-            <p>Investice se vrátí v řádu let, po zbytek životnosti panelů už jen šetříte.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="postup">
-      <div class="container">
-        <h2>Jak to probíhá</h2>
-        <ol class="process-list">
-          <li class="process-step">
-            <span class="process-step__number">01</span>
-            <div class="process-step__body">
-              <h3>Konzultace zdarma</h3>
-              <p>Probereme spotřebu domácnosti a možnosti střechy, nezávazně a bez poplatku.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="process-step__number">02</span>
-            <div class="process-step__body">
-              <h3>Návrh na míru</h3>
-              <p>Navrhneme velikost elektrárny a zpracujeme nabídku přesně podle vaší spotřeby.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="process-step__number">03</span>
-            <div class="process-step__body">
-              <h3>Instalace za 2 dny</h3>
-              <p>Montáž provede náš vlastní tým, obvykle do dvou dnů bez přerušení chodu domácnosti.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="process-step__number">04</span>
-            <div class="process-step__body">
-              <h3>Servis a monitoring</h3>
-              <p>Sledujeme výkon elektrárny na dálku a jsme k dispozici pro servis i po instalaci.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="reference">
-      <div class="container">
-        <h2>Reference</h2>
-        <div class="stats-row">
-          <div class="stat">
-            <span class="stat__number">500+</span>
-            <span class="stat__label">instalací</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">4,2 MWp</span>
-            <span class="stat__label">instalovaný výkon</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">98 %</span>
-            <span class="stat__label">by nás doporučilo</span>
-          </div>
-        </div>
-        <div class="testimonials">
-          <blockquote class="testimonial">
-            <p>Instalace proběhla za dva dny a od té doby platíme za elektřinu zlomek toho, co dřív.</p>
-            <cite>Jana Nováková, Brno</cite>
-          </blockquote>
-          <blockquote class="testimonial">
-            <p>Vyřídili nám i dotaci, nemuseli jsme řešit žádné papírování navíc.</p>
-            <cite>Petr Svoboda, Olomouc</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section id="poptavka">
-      <div class="container poptavka__inner">
-        <div class="poptavka__intro">
-          <h2>Nezávazná poptávka</h2>
-          <p class="poptavka__text">Ozveme se do 24 hodin.</p>
-        </div>
-
-        <form id="lead-form" novalidate class="lead-form">
-          <div class="form-field">
-            <label for="name">Jméno a příjmení</label>
-            <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error">
-            <span class="form-error" id="name-error" aria-live="polite"></span>
-          </div>
-
-          <div class="form-field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
-            <span class="form-error" id="email-error" aria-live="polite"></span>
-          </div>
-
-          <div class="form-field">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-error">
-            <span class="form-error" id="phone-error" aria-live="polite"></span>
-          </div>
-
-          <div class="form-field">
-            <label for="message">Zpráva <span class="form-field__optional">(nepovinné)</span></label>
-            <textarea id="message" name="message" rows="4" autocomplete="off" aria-describedby="message-error"></textarea>
-            <span class="form-error" id="message-error" aria-live="polite"></span>
-          </div>
-
-          <button type="submit" class="btn lead-form__submit">Odeslat poptávku</button>
-
-          <div class="form-success" hidden tabindex="-1" aria-live="polite">Děkujeme! Ozveme se vám do 24 hodin.</div>
-        </form>
-      </div>
-    </section>
-
+  <main id="main">
+    <!-- sekce doplní tasky 2–6 -->
   </main>
 
-  <footer>
-    <div class="container footer__inner">
-      <div class="footer__col">
-        <a href="#hero" class="logo">Helion<span class="logo__dot">&#9675;</span></a>
-        <p class="footer__slogan">Solární elektrárny na klíč, od konzultace po servis.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a class="logo" href="index.html">Alerta<span>.</span></a>
+        <p>Oficiální partner T-Mobile Czech Republic</p>
       </div>
-
-      <div class="footer__col">
-        <h3 class="footer__heading">Kontakt</h3>
-        <address>
-          <ul class="footer__list">
-            <li><a href="mailto:info@helion.cz">info@helion.cz</a></li>
-            <li><a href="tel:+420777123456">+420 777 123 456</a></li>
-            <li>Praha</li>
-          </ul>
-        </address>
-      </div>
-
-      <div class="footer__col">
-        <h3 class="footer__heading">Firma</h3>
-        <ul class="footer__list">
-          <li>IČO 12345678</li>
-          <li>&copy; 2026 Helion s.r.o.</li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="prodejny.html">Prodejny</a></li>
+        <li><a href="tym.html">Tým</a></li>
+        <li><a href="album.html">Fotoalbum</a></li>
+        <li><a href="https://www.prace.cz/nabidka/694781be-ed2d-4bd5-8891-c73213b3a4b1/?rps=2077" target="_blank" rel="noopener">Kariéra</a></li>
+      </ul>
+      <p>© 2026 Alerta s.r.o</p>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
