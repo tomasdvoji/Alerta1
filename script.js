@@ -62,8 +62,14 @@
   var revealEls = document.querySelectorAll("[data-reveal]");
   if (revealEls.length) {
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var finishReveal = function (el, delayS) {
+      setTimeout(function () {
+        el.removeAttribute("data-reveal");
+        el.style.removeProperty("--d");
+      }, 750 + (delayS || 0) * 1000);
+    };
     if (reduceMotion || !("IntersectionObserver" in window)) {
-      revealEls.forEach(function (el) { el.classList.add("in"); });
+      revealEls.forEach(function (el) { el.classList.add("in"); finishReveal(el, 0); });
     } else {
       var ioAlive = false;
       var counters = new WeakMap();
@@ -77,6 +83,9 @@
           entry.target.style.setProperty("--d", (i * 0.07) + "s");
           entry.target.classList.add("in");
           io.unobserve(entry.target);
+          // po dokonceni reveal animace odstranit atribut, aby pomaly
+          // reveal-prechod nebrzdil hover efekty karet
+          finishReveal(entry.target, i * 0.07);
         });
       }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
       revealEls.forEach(function (el) { io.observe(el); });
@@ -85,7 +94,7 @@
       setTimeout(function () {
         if (!ioAlive) {
           io.disconnect();
-          revealEls.forEach(function (el) { el.classList.add("in"); });
+          revealEls.forEach(function (el) { el.classList.add("in"); finishReveal(el, 0); });
         }
       }, 1500);
     }
