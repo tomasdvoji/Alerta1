@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fotoalbum — Alerta s.r.o</title>
   <meta name="description" content="Fotoalbum z našich teambuildingů, firemních výletů a dalších akcí. Podívejte se, jak se bavíme a poznáváme se lépe jako tým.">
+  <meta property="og:title" content="Fotoalbum — Alerta s.r.o">
+  <meta property="og:description" content="Fotoalbum z našich teambuildingů, firemních výletů a dalších akcí.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E20074'/%3E%3Ctext x='32' y='45' font-family='Arial, sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,16 +41,16 @@
     <section class="section" style="padding-top:0">
       <div class="container">
         <div class="album-grid">
-          <!-- TODO: doplnit reálné fotky z teambuildingů -->
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 1"><span class="muted">Teambuilding 2025</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 2"><span class="muted">Firemní výlet</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 3"><span class="muted">Společná večeře</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 4"><span class="muted">Teambuilding 2025</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 5"><span class="muted">Vánoční večírek</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 6"><span class="muted">Letní grilovačka</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 7"><span class="muted">Firemní výlet</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 8"><span class="muted">Teambuilding 2024</span></button>
-          <button class="album-tile" type="button" data-lightbox aria-label="Zvětšit fotku 9"><span class="muted">Bowling</span></button>
+          <!-- TODO: doplnit reálné fotky z teambuildingů (zatím ilustrační placeholder z picsum.photos) -->
+          <button class="album-tile" type="button" data-lightbox data-caption="Teambuilding 2025" aria-label="Zvětšit fotku: Teambuilding 2025" data-reveal><img src="https://picsum.photos/seed/alerta-album-1/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Firemní výlet" aria-label="Zvětšit fotku: Firemní výlet" data-reveal><img src="https://picsum.photos/seed/alerta-album-2/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Společná večeře" aria-label="Zvětšit fotku: Společná večeře" data-reveal><img src="https://picsum.photos/seed/alerta-album-3/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Teambuilding 2025" aria-label="Zvětšit fotku: Teambuilding 2025" data-reveal><img src="https://picsum.photos/seed/alerta-album-4/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Vánoční večírek" aria-label="Zvětšit fotku: Vánoční večírek" data-reveal><img src="https://picsum.photos/seed/alerta-album-5/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Letní grilovačka" aria-label="Zvětšit fotku: Letní grilovačka" data-reveal><img src="https://picsum.photos/seed/alerta-album-6/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Firemní výlet" aria-label="Zvětšit fotku: Firemní výlet" data-reveal><img src="https://picsum.photos/seed/alerta-album-7/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Teambuilding 2024" aria-label="Zvětšit fotku: Teambuilding 2024" data-reveal><img src="https://picsum.photos/seed/alerta-album-8/640/480" alt="" loading="lazy"></button>
+          <button class="album-tile" type="button" data-lightbox data-caption="Bowling" aria-label="Zvětšit fotku: Bowling" data-reveal><img src="https://picsum.photos/seed/alerta-album-9/640/480" alt="" loading="lazy"></button>
         </div>
       </div>
     </section>
@@ -53,6 +58,7 @@
     <div class="lightbox" id="lightbox" hidden>
       <div class="lightbox-body" role="dialog" aria-modal="true" aria-label="Náhled fotky">
         <div class="lightbox-content"></div>
+        <p class="lightbox-cap"></p>
         <button class="lightbox-close" type="button" aria-label="Zavřít">✕</button>
       </div>
     </div>

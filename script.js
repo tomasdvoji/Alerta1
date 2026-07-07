@@ -28,7 +28,18 @@
 
     function openLb(tile) {
       lastFocused = tile;
-      lbContent.textContent = tile.textContent.trim();
+      lbContent.textContent = "";
+      var img = tile.querySelector("img");
+      if (img) {
+        var big = document.createElement("img");
+        big.src = img.src.replace(/\/(\d+)\/(\d+)$/, "/1200/900");
+        big.alt = img.alt;
+        lbContent.appendChild(big);
+      } else {
+        lbContent.textContent = tile.textContent.trim();
+      }
+      var cap = lb.querySelector(".lightbox-cap");
+      if (cap) cap.textContent = tile.getAttribute("data-caption") || "";
       lb.hidden = false;
       lbClose.focus();
     }
@@ -46,4 +57,46 @@
       if (e.key === "Escape" && !lb.hidden) closeLb();
     });
   }
+
+  // Scroll reveal (stagger per section)
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if (revealEls.length) {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealEls.forEach(function (el) { el.classList.add("in"); });
+    } else {
+      var ioAlive = false;
+      var counters = new WeakMap();
+      var io = new IntersectionObserver(function (entries) {
+        ioAlive = true;
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var parent = entry.target.parentElement || document.body;
+          var i = counters.get(parent) || 0;
+          counters.set(parent, i + 1);
+          entry.target.style.setProperty("--d", (i * 0.07) + "s");
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+      revealEls.forEach(function (el) { io.observe(el); });
+      // Pojistka: observer po observe() vzdy dorucuje inicialni entries;
+      // pokud nedorazi (napr. pozastaveny renderer), obsah nesmi zustat skryty.
+      setTimeout(function () {
+        if (!ioAlive) {
+          io.disconnect();
+          revealEls.forEach(function (el) { el.classList.add("in"); });
+        }
+      }, 1500);
+    }
+  }
+
+  // Card pointer glow
+  document.querySelectorAll(".card").forEach(function (card) {
+    card.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
 })();

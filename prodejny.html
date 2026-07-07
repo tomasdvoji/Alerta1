@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naše prodejny — Alerta s.r.o</title>
   <meta name="description" content="Síť 8 prodejen Alerta po celé České republice. Navštivte naši prodejnu a poradíme vám osobně s tarify, telefony, internetem i příslušenstvím.">
+  <meta property="og:title" content="Naše prodejny — Alerta s.r.o">
+  <meta property="og:description" content="Síť 8 prodejen Alerta po celé České republice.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E20074'/%3E%3Ctext x='32' y='45' font-family='Arial, sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,50 +42,50 @@
       <div class="container">
         <div class="shops-grid">
           <!-- TODO: doplnit reálná data (fotky z Googlu, přesné adresy, otevírací doby; telefony se dodají později) -->
-          <article class="card shop-card" id="jablonec">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Jablonec nad Nisou — bude doplněna"><span>Jablonec nad Nisou</span></div>
+          <article class="card shop-card" data-reveal id="jablonec">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-jablonec/800/500" alt="Prodejna Jablonec nad Nisou (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Jablonec nad Nisou</h3>
             <p class="muted">Mírové náměstí 12, 466 01 Jablonec nad Nisou</p>
             <p class="shop-hours">Po–Pá 9:00–17:30 · So 9:00–12:00</p>
           </article>
-          <article class="card shop-card" id="mlada-boleslav">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Mladá Boleslav — bude doplněna"><span>Mladá Boleslav</span></div>
+          <article class="card shop-card" data-reveal id="mlada-boleslav">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-boleslav/800/500" alt="Prodejna Mladá Boleslav (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Mladá Boleslav</h3>
             <p class="muted">Staroměstské náměstí 8, 293 01 Mladá Boleslav</p>
             <p class="shop-hours">Po–Pá 9:00–18:00 · So 9:00–12:00</p>
           </article>
-          <article class="card shop-card" id="teplice">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Teplice — bude doplněna"><span>Teplice</span></div>
+          <article class="card shop-card" data-reveal id="teplice">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-teplice/800/500" alt="Prodejna Teplice (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Teplice</h3>
             <p class="muted">Benešovo náměstí 5, 415 01 Teplice</p>
             <p class="shop-hours">Po–Pá 9:00–17:30</p>
           </article>
-          <article class="card shop-card" id="hostivar">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Praha-Hostivař — bude doplněna"><span>Praha-Hostivař</span></div>
+          <article class="card shop-card" data-reveal id="hostivar">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-hostivar/800/500" alt="Prodejna Praha-Hostivař (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Praha-Hostivař</h3>
             <p class="muted">Švehlova 1391/32, 102 00 Praha 10</p>
             <p class="shop-hours">Po–Pá 9:00–19:00 · So 9:00–14:00</p>
           </article>
-          <article class="card shop-card" id="litomerice">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Litoměřice — bude doplněna"><span>Litoměřice</span></div>
+          <article class="card shop-card" data-reveal id="litomerice">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-litomerice/800/500" alt="Prodejna Litoměřice (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Litoměřice</h3>
             <p class="muted">Mírové náměstí 21, 412 01 Litoměřice</p>
             <p class="shop-hours">Po–Pá 9:00–17:00</p>
           </article>
-          <article class="card shop-card" id="pisek">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Písek — bude doplněna"><span>Písek</span></div>
+          <article class="card shop-card" data-reveal id="pisek">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-pisek/800/500" alt="Prodejna Písek (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Písek</h3>
             <p class="muted">Velké náměstí 14, 397 01 Písek</p>
             <p class="shop-hours">Po–Pá 9:00–17:00 · So 9:00–11:30</p>
           </article>
-          <article class="card shop-card" id="klatovy">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Klatovy — bude doplněna"><span>Klatovy</span></div>
+          <article class="card shop-card" data-reveal id="klatovy">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-klatovy/800/500" alt="Prodejna Klatovy (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Klatovy</h3>
             <p class="muted">Náměstí Míru 9, 339 01 Klatovy</p>
             <p class="shop-hours">Po–Pá 9:00–17:00</p>
           </article>
-          <article class="card shop-card" id="dejvice">
-            <div class="shop-photo" role="img" aria-label="Fotografie prodejny Praha-Dejvice — bude doplněna"><span>Praha-Dejvice</span></div>
+          <article class="card shop-card" data-reveal id="dejvice">
+            <div class="shop-photo"><img src="https://picsum.photos/seed/alerta-dejvice/800/500" alt="Prodejna Praha-Dejvice (ilustrační foto, bude nahrazeno)" loading="lazy"></div>
             <h3>Praha-Dejvice</h3>
             <p class="muted">Vítězné náměstí 2, 160 00 Praha 6</p>
             <p class="shop-hours">Po–Pá 9:00–19:00 · So 9:00–14:00</p>
