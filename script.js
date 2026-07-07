@@ -127,6 +127,40 @@
       });
     }
 
+    // Magneticke CTA v hero — max 2 fokalni prvky, tah omezen na x0.3,
+    // pouze transform (kompozitor), navrat pres CSS transition
+    document.querySelectorAll(".hero-cta .btn").forEach(function (btn) {
+      btn.classList.add("magnetic");
+      btn.addEventListener("pointermove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = (e.clientX - r.left - r.width / 2) * 0.3;
+        var dy = (e.clientY - r.top - r.height / 2) * 0.3;
+        btn.style.setProperty("--tx", dx + "px");
+        btn.style.setProperty("--ty", dy + "px");
+      });
+      btn.addEventListener("pointerleave", function () {
+        btn.style.setProperty("--tx", "0px");
+        btn.style.setProperty("--ty", "0px");
+      });
+    });
+
+    // Jemny parallax dekorativnich vrstev hero pri scrollu (rAF throttling)
+    var pxLayers = document.querySelectorAll(".hero .spotlight");
+    if (pxLayers.length) {
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          var y = Math.min(window.scrollY, window.innerHeight);
+          pxLayers.forEach(function (l, i) {
+            l.style.setProperty("--par", (y * (0.06 + i * 0.04)) + "px");
+          });
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+
     // 3D tilt karet sluzeb
     document.querySelectorAll(".svc-grid .card").forEach(function (card) {
       card.addEventListener("pointermove", function (e) {
