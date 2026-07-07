@@ -223,6 +223,9 @@ body::after {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .js .map-wrap .cz-outline { stroke-dashoffset: 0 !important; stroke: var(--border) !important; }
+  .js .map-wrap .shop-dot { opacity: 1 !important; }
+  .spotlight { translate: none; }
 }
 
 /* ---------- hero (Aceternity Spotlight port) ---------- */
@@ -271,7 +274,21 @@ body::after {
 @media (min-width: 1024px) { .spotlight--alt { left: auto; right: 20%; } }
 
 .hero-inner { position: relative; z-index: 2; text-align: center; padding-block: 96px; }
-.hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); max-width: 16ch; margin-inline: auto; }
+.hero h1 { font-size: clamp(2.6rem, 7.5vw, 5rem); max-width: 16ch; margin-inline: auto; }
+.hero h1 .w {
+  display: inline-block;
+  animation: word-rise 0.9s var(--ease) both;
+}
+.hero h1 .w:nth-child(2) { animation-delay: 0.12s; }
+.hero h1 .w:nth-child(3) { animation-delay: 0.24s; }
+@keyframes word-rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+/* kuzely svetla jemne sleduji kurzor (JS nastavuje --px/--py) */
+.spotlight {
+  translate: calc(var(--px, 0) * 24px) calc(var(--py, 0) * 14px);
+}
 .hero-sub {
   margin: 20px auto 0;
   max-width: 34rem;
@@ -283,6 +300,41 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   .spotlight { opacity: 1; transform: translate(-50%, -40%); }
   .spotlight--alt { opacity: 0.55; transform: scaleX(-1) translate(-50%, -40%); }
+}
+
+/* ---------- marquee mest ---------- */
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  padding-block: 16px;
+  background: rgba(255, 255, 255, 0.015);
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee-track span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.marquee-track span::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
 
 /* ---------- prodejny / mapa ---------- */
@@ -300,6 +352,24 @@ body::after {
   stroke-width: 1.5;
   stroke-linejoin: round;
 }
+/* mapa se "nakresli" pri odhaleni sekce, body naskoci postupne */
+.js .map-wrap .cz-outline {
+  stroke: rgba(226, 0, 116, 0.45);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s var(--ease) 0.2s, stroke 1s ease 1.6s;
+}
+.js .map-wrap.in .cz-outline { stroke-dashoffset: 0; stroke: var(--border); }
+.js .map-wrap .shop-dot { opacity: 0; transition: opacity 0.45s var(--ease); }
+.js .map-wrap.in .shop-dot { opacity: 1; }
+.js .map-wrap.in .cz-map a:nth-of-type(1) .shop-dot { transition-delay: 0.9s; }
+.js .map-wrap.in .cz-map a:nth-of-type(2) .shop-dot { transition-delay: 1.02s; }
+.js .map-wrap.in .cz-map a:nth-of-type(3) .shop-dot { transition-delay: 1.14s; }
+.js .map-wrap.in .cz-map a:nth-of-type(4) .shop-dot { transition-delay: 1.26s; }
+.js .map-wrap.in .cz-map a:nth-of-type(5) .shop-dot { transition-delay: 1.38s; }
+.js .map-wrap.in .cz-map a:nth-of-type(6) .shop-dot { transition-delay: 1.5s; }
+.js .map-wrap.in .cz-map a:nth-of-type(7) .shop-dot { transition-delay: 1.62s; }
+.js .map-wrap.in .cz-map a:nth-of-type(8) .shop-dot { transition-delay: 1.74s; }
 .shop-dot {
   fill: var(--accent);
   cursor: pointer;
@@ -333,6 +403,10 @@ body::after {
   background:
     radial-gradient(420px 200px at 12% -10%, rgba(226, 0, 116, 0.10), transparent 70%),
     var(--bg-raised);
+}
+/* 3D tilt pod kurzorem (JS nastavuje --rx/--ry) */
+.svc-grid .card:hover {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-3px);
 }
 @media (max-width: 880px) {
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
@@ -403,7 +477,13 @@ body::after {
 @media (max-width: 880px) { .tb-preview .tb-tile:nth-child(even) { transform: none; } }
 
 /* ---------- kariéra ---------- */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 .career-panel {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: clamp(32px, 6vw, 72px);
@@ -411,6 +491,18 @@ body::after {
   background:
     radial-gradient(ellipse at 50% -20%, rgba(226, 0, 116, 0.16), transparent 60%),
     var(--bg-raised);
+}
+.career-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 21px;
+  z-index: -1;
+  background: conic-gradient(from var(--angle), transparent 0turn, rgba(226, 0, 116, 0.55) 0.1turn, transparent 0.22turn);
+  animation: spin-border 7s linear infinite;
+}
+@keyframes spin-border {
+  to { --angle: 360deg; }
 }
 .career-panel p { max-width: 46rem; margin-inline: auto; }
 

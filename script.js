@@ -99,4 +99,38 @@
       card.style.setProperty("--my", (e.clientY - r.top) + "px");
     });
   });
+
+  // Pohybove efekty jen pro presny kurzor a bez reduced-motion
+  var fancy = window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+    && window.matchMedia("(pointer: fine)").matches;
+  if (fancy) {
+    // Hero: kuzely svetla jemne sleduji kurzor
+    var hero = document.querySelector(".hero");
+    if (hero) {
+      hero.addEventListener("pointermove", function (e) {
+        var r = hero.getBoundingClientRect();
+        hero.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5) * 2);
+        hero.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5) * 2);
+      });
+      hero.addEventListener("pointerleave", function () {
+        hero.style.setProperty("--px", 0);
+        hero.style.setProperty("--py", 0);
+      });
+    }
+
+    // 3D tilt karet sluzeb
+    document.querySelectorAll(".svc-grid .card").forEach(function (card) {
+      card.addEventListener("pointermove", function (e) {
+        var r = card.getBoundingClientRect();
+        var dx = (e.clientX - r.left) / r.width - 0.5;
+        var dy = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty("--ry", (dx * 6) + "deg");
+        card.style.setProperty("--rx", (dy * -6) + "deg");
+      });
+      card.addEventListener("pointerleave", function () {
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      });
+    });
+  }
 })();
