@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import shops from '../data/editable/shops.json';
+---
+<Base title="Naše prodejny — Alerta s.r.o" description={`Síť ${shops.items.length} prodejen Alerta po celé České republice. Navštivte naši prodejnu a poradíme vám osobně s tarify, telefony, internetem i příslušenstvím.`}>
+  <section class="section page-head">
+    <div class="container">
+      <span class="eyebrow">{shops.eyebrow}</span>
+      <h1 class="grad-text">{shops.title}</h1>
+      <p class="muted">{shops.lead}</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="shops-grid">
+        {shops.items.map((s) => (
+          <article class="card shop-card" data-reveal id={s.id}>
+            <div class="shop-photo"><img src={s.photo} alt={`Prodejna ${s.name}`} loading="lazy" /></div>
+            <h3>{s.name}</h3>
+            <p class="muted">{s.address}</p>
+            <p class="shop-hours">{s.hours}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

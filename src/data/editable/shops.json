@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Prodejny",
+  "title": "Naše prodejny",
+  "lead": "8 prodejen po celé České republice. Přijďte – poradíme vám osobně.",
+  "items": [
+    { "id": "jablonec", "name": "Jablonec nad Nisou", "address": "Mírové náměstí 12, 466 01 Jablonec nad Nisou", "hours": "Po–Pá 9:00–17:30 · So 9:00–12:00", "photo": "https://picsum.photos/seed/alerta-jablonec/800/500", "mapX": 273, "mapY": 47 },
+    { "id": "mlada-boleslav", "name": "Mladá Boleslav", "address": "Staroměstské náměstí 8, 293 01 Mladá Boleslav", "hours": "Po–Pá 9:00–18:00 · So 9:00–12:00", "photo": "https://picsum.photos/seed/alerta-boleslav/800/500", "mapX": 249, "mapY": 91 },
+    { "id": "teplice", "name": "Teplice", "address": "Benešovo náměstí 5, 415 01 Teplice", "hours": "Po–Pá 9:00–17:30", "photo": "https://picsum.photos/seed/alerta-teplice/800/500", "mapX": 154, "mapY": 59 },
+    { "id": "litomerice", "name": "Litoměřice", "address": "Mírové náměstí 21, 412 01 Litoměřice", "hours": "Po–Pá 9:00–17:00", "photo": "https://picsum.photos/seed/alerta-litomerice/800/500", "mapX": 181, "mapY": 74 },
+    { "id": "dejvice", "name": "Praha-Dejvice", "address": "Vítězné náměstí 2, 160 00 Praha 6", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "photo": "https://picsum.photos/seed/alerta-dejvice/800/500", "mapX": 204, "mapY": 134 },
+    { "id": "hostivar", "name": "Praha-Hostivař", "address": "Švehlova 1391/32, 102 00 Praha 10", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "photo": "https://picsum.photos/seed/alerta-hostivar/800/500", "mapX": 216, "mapY": 141 },
+    { "id": "pisek", "name": "Písek", "address": "Velké náměstí 14, 397 01 Písek", "hours": "Po–Pá 9:00–17:00 · So 9:00–11:30", "photo": "https://picsum.photos/seed/alerta-pisek/800/500", "mapX": 182, "mapY": 244 },
+    { "id": "klatovy", "name": "Klatovy", "address": "Náměstí Míru 9, 339 01 Klatovy", "hours": "Po–Pá 9:00–17:00", "photo": "https://picsum.photos/seed/alerta-klatovy/800/500", "mapX": 107, "mapY": 232 }
+  ]
+}

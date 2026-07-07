@@ -1,0 +1,65 @@
+---
+// Společná kostra všech stránek — hlavička, navigace, patička.
+import site from '../data/editable/site.json';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add("js")</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E20074'/%3E%3Ctext x='32' y='45' font-family='Arial, sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a class="logo" href="/">Alerta<span>.</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">☰</button>
+      <ul class="nav-links" id="nav-links" data-nav-links>
+        <li><a href="/#prodejny">Prodejny</a></li>
+        <li><a href="/#sluzby">Služby</a></li>
+        <li><a href="/#tym">Tým</a></li>
+        <li><a href="/#kariera">Kariéra</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <a class="logo" href="/">Alerta<span>.</span></a>
+        <p>{site.partnerNote}</p>
+      </div>
+      <ul>
+        <li><a href="/prodejny">Prodejny</a></li>
+        <li><a href="/tym">Tým</a></li>
+        <li><a href="/album">Fotoalbum</a></li>
+        <li><a href={site.careerUrl} target="_blank" rel="noopener">Kariéra</a></li>
+      </ul>
+      <p>{site.copyright}</p>
+    </div>
+  </footer>
+
+  <script src="/script.js" is:inline></script>
+</body>
+</html>
