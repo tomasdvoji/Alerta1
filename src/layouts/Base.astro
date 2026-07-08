@@ -35,7 +35,7 @@ const { title, description } = Astro.props;
         <li><a href="/#prodejny">Prodejny</a></li>
         <li><a href="/#sluzby">Služby</a></li>
         <li><a href="/#tym">Tým</a></li>
-        <li><a href="/#kariera">Kariéra</a></li>
+        <li><a href="/kariera">Kariéra</a></li>
       </ul>
     </div>
   </header>
@@ -48,13 +48,13 @@ const { title, description } = Astro.props;
     <div class="container">
       <div>
         <a class="logo" href="/">Alerta<span>.</span></a>
-        <p>{site.partnerNote}</p>
+        <p>{site.name}<br>{site.address}<br>IČO: {site.ico} | DIČ: {site.dic}<br>{site.partnerNote}</p>
       </div>
       <ul>
         <li><a href="/prodejny">Prodejny</a></li>
         <li><a href="/tym">Tým</a></li>
         <li><a href="/album">Fotoalbum</a></li>
-        <li><a href={site.careerUrl} target="_blank" rel="noopener">Kariéra</a></li>
+        <li><a href="/kariera">Kariéra</a></li>
       </ul>
       <p>{site.copyright}</p>
     </div>

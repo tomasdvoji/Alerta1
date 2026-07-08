@@ -26,8 +26,11 @@ collections:
           - { name: "name", label: "Název firmy", widget: "string" }
           - { name: "claim", label: "Hlavní slogan (nadpis na úvodu)", widget: "string" }
           - { name: "partnerNote", label: "Text v patičce (partner)", widget: "string" }
-          - { name: "careerUrl", label: "Odkaz na volná místa", widget: "string" }
+          - { name: "careerUrl", label: "Odkaz na nabídky práce (prace.cz)", widget: "string" }
           - { name: "copyright", label: "Copyright v patičce", widget: "string" }
+          - { name: "address", label: "Sídlo firmy", widget: "string" }
+          - { name: "ico", label: "IČO", widget: "string" }
+          - { name: "dic", label: "DIČ", widget: "string" }
 
       - name: "uvod"
         label: "Úvodní stránka"
@@ -36,6 +39,7 @@ collections:
           - { name: "heroSub", label: "Podtitul pod hlavním nadpisem", widget: "text" }
           - { name: "btnShops", label: "Tlačítko Prodejny", widget: "string" }
           - { name: "btnServices", label: "Tlačítko Služby", widget: "string" }
+          - { name: "btnCareer", label: "Tlačítko Kariéra", widget: "string" }
           - { name: "mapHeading", label: "Mapa — nadpis", widget: "string" }
           - { name: "mapPara1", label: "Mapa — první odstavec", widget: "text" }
           - { name: "mapPara2", label: "Mapa — druhý odstavec", widget: "text" }
@@ -64,6 +68,32 @@ collections:
           - { name: "careerPara1", label: "Kariéra — první odstavec", widget: "text" }
           - { name: "careerPara2", label: "Kariéra — druhý odstavec", widget: "text" }
           - { name: "careerBtn", label: "Kariéra — tlačítko", widget: "string" }
+
+  # ---------- Kariéra ----------
+  - name: "kariera"
+    label: "Kariéra"
+    files:
+      - name: "inzerat"
+        label: "Stránka Kariéra (inzerát)"
+        file: "src/data/editable/kariera.json"
+        fields:
+          - { name: "eyebrow", label: "Štítek nahoře", widget: "string" }
+          - { name: "title", label: "Nadpis stránky", widget: "string" }
+          - { name: "intro", label: "Úvodní odstavec", widget: "text" }
+          - { name: "contactHeading", label: "Kontakt — nadpis", widget: "string" }
+          - { name: "contactEmailLabel", label: "Kontakt — popisek e-mailu", widget: "string" }
+          - { name: "email", label: "Kontaktní e-mail", widget: "string", required: false, hint: "Dokud je prázdný, zobrazí se poznámka, že kontakty doplníme." }
+          - { name: "contactPhoneLabel", label: "Kontakt — popisek telefonu", widget: "string" }
+          - { name: "phone", label: "Kontaktní telefon", widget: "string", required: false }
+          - name: "sections"
+            label: "Oddíly inzerátu"
+            widget: "list"
+            summary: "{{fields.heading}}"
+            fields:
+              - { name: "heading", label: "Nadpis oddílu", widget: "string" }
+              - { name: "items", label: "Body", widget: "list" }
+          - { name: "praceLabel", label: "Tlačítko dole — text", widget: "string" }
+          - { name: "praceUrl", label: "Tlačítko dole — odkaz", widget: "string" }
 
   # ---------- Prodejny ----------
   - name: "prodejny"

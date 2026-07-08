@@ -62,7 +62,7 @@ h2 { font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 16px; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 
 .grad-text {
-  background: linear-gradient(to bottom, #fafafa, #a3a3b2);
+  background: linear-gradient(to bottom, #fafafa 20%, var(--accent-text));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -92,10 +92,10 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .btn-primary:hover { box-shadow: 0 6px 24px rgba(226, 0, 116, 0.35); }
 
 .btn-ghost {
-  border: 1px solid var(--border);
-  color: var(--text);
+  border: 1px solid rgba(226, 0, 116, 0.55);
+  color: var(--accent-text);
 }
-.btn-ghost:hover { background: rgba(255, 255, 255, 0.06); }
+.btn-ghost:hover { background: var(--accent-soft); }
 
 /* ---------- cards ---------- */
 .card {
@@ -514,6 +514,17 @@ img.avatar { object-fit: cover; }
   to { --angle: 360deg; }
 }
 .career-panel p { max-width: 46rem; margin-inline: auto; }
+
+/* ---------- kariéra — inzerát ---------- */
+.job { max-width: 760px; }
+.job-contact { margin-bottom: 40px; }
+.job-contact h2 { font-size: 1.4rem; margin-bottom: 10px; }
+.job-contact a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+.job-contact a:hover { text-decoration: underline; }
+.job-section { margin-bottom: 36px; }
+.job-section h2 { font-size: 1.25rem; margin-bottom: 14px; }
+.job-list { list-style: none; display: grid; gap: 10px; color: var(--text-dim); }
+.job-cta { margin-top: 44px; }
 
 /* ---------- podstránky ---------- */
 .page-head { padding-bottom: 24px; }
