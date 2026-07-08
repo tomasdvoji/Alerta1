@@ -8,6 +8,7 @@ import shops from '../data/editable/shops.json';
       <span class="eyebrow">{shops.eyebrow}</span>
       <h1 class="grad-text">{shops.title}</h1>
       <p class="muted">{shops.lead}</p>
+      <p style="margin-top:24px"><a class="btn btn-primary" href="/objednat">Objednat se na prodejnu</a></p>
     </div>
   </section>
   <section class="section" style="padding-top:0">
@@ -19,6 +20,7 @@ import shops from '../data/editable/shops.json';
             <h3>{s.name}</h3>
             <p class="muted">{s.address}</p>
             <p class="shop-hours">{s.hours}</p>
+            <p class="shop-book"><a class="btn btn-ghost" href={`/objednat?prodejna=${s.id}`}>Objednat se</a></p>
           </article>
         ))}
       </div>

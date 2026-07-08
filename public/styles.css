@@ -516,6 +516,38 @@ img.avatar { object-fit: cover; }
 }
 .career-panel p { max-width: 46rem; margin-inline: auto; }
 
+/* ---------- objednávka ---------- */
+.booking { max-width: 760px; }
+.booking-form { padding: 32px; }
+.booking-form:hover { transform: none; }
+.form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-dim); }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+}
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.form-field select option { background: var(--bg-raised); color: var(--text); }
+.form-field textarea { resize: vertical; }
+.form-error { color: #ff8080; }
+.booking-form .btn[disabled] { opacity: 0.6; cursor: wait; }
+.booking-success { padding: 36px; text-align: center; }
+.booking-success h2 { margin-bottom: 10px; }
+
 /* ---------- kariéra — inzerát ---------- */
 .job { max-width: 760px; }
 .job-contact { margin-bottom: 40px; }
@@ -542,7 +574,8 @@ img.avatar { object-fit: cover; }
 .shop-card { scroll-margin-top: 90px; padding: 0; overflow: hidden; }
 .shop-card h3 { padding: 18px 22px 0; }
 .shop-card p { padding: 4px 22px 0; font-size: 0.9rem; }
-.shop-card .shop-hours { padding-bottom: 22px; color: var(--accent-text); font-weight: 600; font-size: 0.85rem; }
+.shop-card .shop-hours { color: var(--accent-text); font-weight: 600; font-size: 0.85rem; }
+.shop-card .shop-book { padding: 14px 22px 22px; }
 .shop-photo {
   aspect-ratio: 16 / 10;
   display: grid;

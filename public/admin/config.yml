@@ -115,9 +115,28 @@ collections:
               - { name: "name", label: "Město / název", widget: "string" }
               - { name: "address", label: "Adresa", widget: "string" }
               - { name: "hours", label: "Otevírací doba", widget: "string" }
+              - { name: "email", label: "E-mail prodejny (chodí sem objednávky)", widget: "string", required: false, hint: "Když je prázdný, objednávky chodí na centrální e-mail nastavený na stránce Objednání." }
               - { name: "photo", label: "Fotka prodejny", widget: "image", required: false }
               - { name: "mapX", label: "Poloha na mapě — X", widget: "number", value_type: "int", hint: "Technické pole (0–600). Needitujte, pokud nemusíte." }
               - { name: "mapY", label: "Poloha na mapě — Y", widget: "number", value_type: "int", hint: "Technické pole (0–350). Needitujte, pokud nemusíte." }
+
+  # ---------- Objednání ----------
+  - name: "objednani"
+    label: "Objednání na prodejnu"
+    files:
+      - name: "formular"
+        label: "Objednávkový formulář"
+        file: "src/data/editable/objednat.json"
+        fields:
+          - { name: "eyebrow", label: "Štítek nahoře", widget: "string" }
+          - { name: "title", label: "Nadpis stránky", widget: "string" }
+          - { name: "lead", label: "Úvodní text", widget: "text" }
+          - { name: "fallbackEmail", label: "Centrální e-mail pro objednávky", widget: "string", hint: "Sem chodí objednávky z prodejen, které nemají vyplněný vlastní e-mail." }
+          - { name: "successHeading", label: "Potvrzení — nadpis", widget: "string" }
+          - { name: "successText", label: "Potvrzení — text", widget: "text" }
+          - { name: "errorText", label: "Chybová hláška", widget: "text" }
+          - { name: "autoReplyIntro", label: "E-mail zákazníkovi — úvod", widget: "text" }
+          - { name: "autoReplyOutro", label: "E-mail zákazníkovi — závěr", widget: "text" }
 
   # ---------- Tým ----------
   - name: "tym"
