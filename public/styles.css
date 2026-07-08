@@ -378,6 +378,7 @@ body::after {
 .js .map-wrap.in .cz-map a:nth-of-type(6) .shop-dot { transition-delay: 1.5s; }
 .js .map-wrap.in .cz-map a:nth-of-type(7) .shop-dot { transition-delay: 1.62s; }
 .js .map-wrap.in .cz-map a:nth-of-type(8) .shop-dot { transition-delay: 1.74s; }
+.js .map-wrap.in .cz-map a:nth-of-type(9) .shop-dot { transition-delay: 1.86s; }
 .shop-dot {
   fill: var(--accent);
   cursor: pointer;
