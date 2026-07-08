@@ -62,7 +62,7 @@ h2 { font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 16px; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 
 .grad-text {
-  background: linear-gradient(to bottom, #fafafa 20%, var(--accent-text));
+  background: linear-gradient(to bottom, #fafafa 15%, var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
