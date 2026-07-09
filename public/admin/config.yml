@@ -46,6 +46,7 @@ collections:
           - { name: "mapNote", label: "Popisek pod mapou", widget: "string" }
           - { name: "servicesEyebrow", label: "Služby — štítek", widget: "string" }
           - { name: "servicesHeading", label: "Služby — nadpis", widget: "string" }
+          - { name: "servicesBtn", label: "Služby — tlačítko objednání", widget: "string" }
           - name: "services"
             label: "Služby (karty)"
             widget: "list"

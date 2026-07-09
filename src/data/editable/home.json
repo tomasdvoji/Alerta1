@@ -9,6 +9,7 @@
   "mapNote": "9 prodejen po celé České republice",
   "servicesEyebrow": "Služby",
   "servicesHeading": "Vše pod jednou střechou",
+  "servicesBtn": "Objednat se na prodejnu",
   "services": [
     { "icon": "phone", "title": "Telefony", "text": "Pomůžeme vybrat ten správný – podle potřeb, rozpočtu i zvyku." },
     { "icon": "globe", "title": "Internet", "text": "Mobilní i domácí internet. Nastavíme, vysvětlíme, spustíme." },

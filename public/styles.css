@@ -419,7 +419,8 @@ body::after {
 }
 @media (max-width: 880px) {
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
-  .svc-grid .card { grid-column: auto; padding: 28px; }
+  /* :nth-child(n) drží stejnou specificitu jako span pravidla výše */
+  .svc-grid .card:nth-child(n) { grid-column: auto; padding: 28px; }
 }
 @media (max-width: 560px) { .svc-grid { grid-template-columns: 1fr; } }
 
