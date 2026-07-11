@@ -68,7 +68,7 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   color: transparent;
 }
 
-/* Bila verze nadpisu — zapina se pres ?nadpisy=bile (viz Base.astro) */
+/* Bila verze nadpisu — prepina se plovoucim tlacitkem (viz Base.astro) */
 html.headings-white .grad-text {
   background: none;
   -webkit-background-clip: initial;
@@ -76,7 +76,7 @@ html.headings-white .grad-text {
   color: #fafafa;
 }
 
-/* Plovouci prepinac verzi pro ukazku zakaznikovi (?nadpisy=demo) */
+/* Plovouci prepinac verzi nadpisu */
 .version-toggle {
   position: fixed;
   right: 16px;

@@ -14,12 +14,8 @@ const { title, description } = Astro.props;
   <meta charset="UTF-8">
   <script>document.documentElement.classList.add("js")</script>
   <script is:inline>
-    // Prepinani verze nadpisu pro ukazku zakaznikovi: ?nadpisy=bile | fialove | demo | konec
+    // Aplikuje ulozenou verzi nadpisu jeste pred vykreslenim (bez probliknuti)
     (function () {
-      var q = new URLSearchParams(location.search).get('nadpisy');
-      if (q === 'bile' || q === 'fialove') localStorage.setItem('alerta-nadpisy', q);
-      if (q === 'demo') localStorage.setItem('alerta-nadpisy-demo', '1');
-      if (q === 'konec') { localStorage.removeItem('alerta-nadpisy'); localStorage.removeItem('alerta-nadpisy-demo'); }
       if (localStorage.getItem('alerta-nadpisy') === 'bile') document.documentElement.classList.add('headings-white');
     })();
   </script>
@@ -73,9 +69,8 @@ const { title, description } = Astro.props;
 
   <script src="/script.js" is:inline></script>
   <script is:inline>
-    // Plovouci prepinac verzi (jen v demo rezimu, viz ?nadpisy=demo)
+    // Plovouci prepinac verzi nadpisu (fialova / bila)
     (function () {
-      if (localStorage.getItem('alerta-nadpisy-demo') !== '1') return;
       var box = document.createElement('div');
       box.className = 'version-toggle';
       [['fialove', 'Fialové'], ['bile', 'Bílé']].forEach(function (v) {
