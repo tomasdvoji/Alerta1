@@ -95,9 +95,11 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
         var summary = 'Prodejna ' + shop.name + ', ' + dateCz + ' v ' + form.cas.value + ' hod.';
 
         var btn = document.getElementById('bf-submit');
+        var errEl = document.getElementById('bf-error');
+        if (!errEl.dataset.base) errEl.dataset.base = errEl.textContent;
         btn.disabled = true;
         btn.textContent = 'Odesílám…';
-        document.getElementById('bf-error').hidden = true;
+        errEl.hidden = true;
 
         fetch('https://formsubmit.co/ajax/' + shop.email, {
           method: 'POST',
@@ -116,16 +118,24 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
             'Telefon': form.telefon.value,
             'E-mail': form.email.value
           })
-        }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+        }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
           .then(function (res) {
-            if (!res.ok) throw new Error('send failed');
+            // FormSubmit umí vrátit i 200 se success:"false" (např. neaktivovaný e-mail)
+            var failed = !res.ok || String(res.j && res.j.success) === 'false';
+            if (failed) {
+              var err = new Error('send failed');
+              err.detail = (res.j && (res.j.message || res.j.error)) || ('HTTP ' + res.status);
+              throw err;
+            }
             document.getElementById('bs-summary').textContent = summary;
             form.hidden = true;
             document.getElementById('booking-success').hidden = false;
             window.scrollTo({ top: 0, behavior: 'smooth' });
           })
-          .catch(function () {
-            document.getElementById('bf-error').hidden = false;
+          .catch(function (err) {
+            console.error('Objednávka se neodeslala:', err && err.detail ? err.detail : err);
+            errEl.textContent = errEl.dataset.base + (err && err.detail ? ' [' + err.detail + ']' : '');
+            errEl.hidden = false;
             btn.disabled = false;
             btn.textContent = 'Objednat se';
           });

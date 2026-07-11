@@ -68,6 +68,39 @@ h3 { font-size: 1.15rem; font-weight: 600; }
   color: transparent;
 }
 
+/* Bila verze nadpisu — zapina se pres ?nadpisy=bile (viz Base.astro) */
+html.headings-white .grad-text {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: #fafafa;
+}
+
+/* Plovouci prepinac verzi pro ukazku zakaznikovi (?nadpisy=demo) */
+.version-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+}
+.version-toggle button {
+  border: 0;
+  background: transparent;
+  color: var(--text-dim);
+  font: 600 0.8rem var(--font);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.version-toggle button.active { background: var(--accent); color: #fff; }
+
 .muted { color: var(--text-dim); }
 
 /* ---------- buttons ---------- */
