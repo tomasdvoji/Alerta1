@@ -1,7 +1,8 @@
 ---
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import Base from '../layouts/Base.astro';
 import shops from '../data/editable/shops.json';
+const baseRaw = import.meta.env.BASE_URL;
+const base = baseRaw.endsWith('/') ? baseRaw.slice(0, -1) : baseRaw;
 ---
 <Base title="Naše prodejny — Alerta s.r.o" description={`Síť ${shops.items.length} prodejen Alerta po celé České republice. Navštivte naši prodejnu a poradíme vám osobně s tarify, telefony, internetem i příslušenstvím.`}>
   <section class="section page-head">
@@ -21,7 +22,7 @@ import shops from '../data/editable/shops.json';
             <h3>{s.name}</h3>
             <p class="muted">{s.address}</p>
             <p class="shop-hours">{s.hours}</p>
-            <p class="shop-book"><a class="btn btn-ghost" href={`/objednat?prodejna=${s.id}`}>Objednat se</a></p>
+            <p class="shop-book"><a class="btn btn-ghost" href={`${base}/objednat?prodejna=${s.id}`}>Objednat se</a></p>
           </article>
         ))}
       </div>

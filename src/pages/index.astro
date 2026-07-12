@@ -1,5 +1,4 @@
 ---
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import Base from '../layouts/Base.astro';
 import SvcIcon from '../components/SvcIcon.astro';
 import site from '../data/editable/site.json';
@@ -12,6 +11,8 @@ const heroWords = site.claim.split(' ');
 const teamPreview = team.items.slice(0, 4);
 const tbPreview = album.items.slice(0, 4);
 const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
+const baseRaw = import.meta.env.BASE_URL;
+const base = baseRaw.endsWith('/') ? baseRaw.slice(0, -1) : baseRaw;
 ---
 <Base title={`${site.name} — ${site.claim.replace(/\.$/, '')}`} description={`${site.name} je oficiálním partnerem T-Mobile Czech Republic. Tarify, telefony, internet i příslušenství — vše pod jednou střechou.`}>
   <section class="hero" id="uvod">
@@ -69,7 +70,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
         <svg class="cz-map" viewBox="0 0 600 350" role="group" aria-label="Mapa prodejen Alerta v České republice">
           <path class="cz-outline" pathLength="1" d="M0,113 L21,124 L41,61 L83,77 L116,63 L156,46 L204,22 L197,1 L257,8 L283,25 L306,39 L348,64 L386,67 L365,89 L409,134 L499,103 L527,138 L574,158 L599,215 L538,251 L493,308 L452,305 L430,340 L394,314 L352,322 L272,296 L231,346 L173,343 L126,291 L48,223 L27,183 L41,159 Z"/>
           {shops.items.map((s) => (
-            <a href={`/prodejny#${s.id}`} aria-label={`Prodejna ${s.name}`}><circle class="shop-dot" cx={s.mapX} cy={s.mapY} r="7"><title>{s.name}</title></circle></a>
+            <a href={`${base}/prodejny#${s.id}`} aria-label={`Prodejna ${s.name}`}><circle class="shop-dot" cx={s.mapX} cy={s.mapY} r="7"><title>{s.name}</title></circle></a>
           ))}
         </svg>
         <p class="map-note muted">{home.mapNote}</p>
