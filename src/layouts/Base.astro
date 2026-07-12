@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // Společná kostra všech stránek — hlavička, navigace, patička.
 import site from '../data/editable/site.json';
 
@@ -30,19 +31,19 @@ const { title, description } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href={base + "/styles.css"}>
 </head>
 <body>
   <header class="site-nav">
     <div class="container">
-      <a class="logo" href="/">Alerta<span>.</span></a>
+      <a class="logo" href={base + "/"}>Alerta<span>.</span></a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">☰</button>
       <ul class="nav-links" id="nav-links" data-nav-links>
-        <li><a href="/#prodejny">Prodejny</a></li>
-        <li><a href="/#sluzby">Služby</a></li>
-        <li><a href="/#tym">Tým</a></li>
-        <li><a href="/kariera">Kariéra</a></li>
-        <li><a href="/objednat">Objednat se</a></li>
+        <li><a href={base + "/#prodejny"}>Prodejny</a></li>
+        <li><a href={base + "/#sluzby"}>Služby</a></li>
+        <li><a href={base + "/#tym"}>Tým</a></li>
+        <li><a href={base + "/kariera"}>Kariéra</a></li>
+        <li><a href={base + "/objednat"}>Objednat se</a></li>
       </ul>
     </div>
   </header>
@@ -54,20 +55,20 @@ const { title, description } = Astro.props;
   <footer class="site-footer">
     <div class="container">
       <div>
-        <a class="logo" href="/">Alerta<span>.</span></a>
+        <a class="logo" href={base + "/"}>Alerta<span>.</span></a>
         <p>{site.name}<br>{site.address}<br>IČO: {site.ico} | DIČ: {site.dic}<br>{site.partnerNote}</p>
       </div>
       <ul>
-        <li><a href="/prodejny">Prodejny</a></li>
-        <li><a href="/tym">Tým</a></li>
-        <li><a href="/album">Fotoalbum</a></li>
-        <li><a href="/kariera">Kariéra</a></li>
+        <li><a href={base + "/prodejny"}>Prodejny</a></li>
+        <li><a href={base + "/tym"}>Tým</a></li>
+        <li><a href={base + "/album"}>Fotoalbum</a></li>
+        <li><a href={base + "/kariera"}>Kariéra</a></li>
       </ul>
       <p>{site.copyright}</p>
     </div>
   </footer>
 
-  <script src="/script.js" is:inline></script>
+  <script src={base + "/script.js"} is:inline></script>
   <script is:inline>
     // Plovouci prepinac verzi nadpisu (fialova / bila)
     (function () {

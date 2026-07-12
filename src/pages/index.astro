@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 import Base from '../layouts/Base.astro';
 import SvcIcon from '../components/SvcIcon.astro';
 import site from '../data/editable/site.json';
@@ -48,9 +49,9 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
       <h1>{heroWords.map((w, i) => <><span class="w grad-text">{w}</span>{i < heroWords.length - 1 ? ' ' : ''}</>)}</h1>
       <p class="hero-sub">{home.heroSub}</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="/prodejny">{home.btnShops}</a>
+        <a class="btn btn-primary" href={base + "/prodejny"}>{home.btnShops}</a>
         <a class="btn btn-ghost" href="#sluzby">{home.btnServices}</a>
-        <a class="btn btn-ghost" href="/kariera">{home.btnCareer}</a>
+        <a class="btn btn-ghost" href={base + "/kariera"}>{home.btnCareer}</a>
       </div>
     </div>
   </section>
@@ -77,7 +78,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
         <h2 class="grad-text">{home.mapHeading}</h2>
         <p>{home.mapPara1}</p>
         <p class="muted" style="margin-top:12px">{home.mapPara2}</p>
-        <p style="margin-top:28px"><a class="btn btn-primary" href="/prodejny">{home.btnShops}</a></p>
+        <p style="margin-top:28px"><a class="btn btn-primary" href={base + "/prodejny"}>{home.btnShops}</a></p>
       </div>
     </div>
   </section>
@@ -97,7 +98,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
           </article>
         ))}
       </div>
-      <p style="margin-top:32px;text-align:center"><a class="btn btn-primary" href="/objednat">{home.servicesBtn}</a></p>
+      <p style="margin-top:32px;text-align:center"><a class="btn btn-primary" href={base + "/objednat"}>{home.servicesBtn}</a></p>
     </div>
   </section>
 
@@ -118,7 +119,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
           </article>
         ))}
       </div>
-      <p style="margin-top:32px;text-align:center"><a class="btn btn-ghost" href="/tym">{home.teamBtn}</a></p>
+      <p style="margin-top:32px;text-align:center"><a class="btn btn-ghost" href={base + "/tym"}>{home.teamBtn}</a></p>
     </div>
   </section>
 
@@ -127,7 +128,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
       <div data-reveal>
         <h2 class="grad-text">{home.tbHeading}</h2>
         <p class="muted">{home.tbLead}</p>
-        <p style="margin-top:28px"><a class="btn btn-ghost" href="/album">{home.tbBtn}</a></p>
+        <p style="margin-top:28px"><a class="btn btn-ghost" href={base + "/album"}>{home.tbBtn}</a></p>
       </div>
       <div class="tb-preview" aria-hidden="true">
         {tbPreview.map((p) => <img class="tb-tile" src={p.image} alt="" loading="lazy" data-reveal />)}
@@ -142,7 +143,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
         <h2 class="grad-text">{home.careerHeading}</h2>
         <p>{home.careerPara1}</p>
         <p class="muted" style="margin-top:12px">{home.careerPara2}</p>
-        <p style="margin-top:32px"><a class="btn btn-primary" href="/kariera">{home.careerBtn}</a></p>
+        <p style="margin-top:32px"><a class="btn btn-primary" href={base + "/kariera"}>{home.careerBtn}</a></p>
       </div>
     </div>
   </section>
