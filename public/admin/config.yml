@@ -1,10 +1,15 @@
 # Konfigurace vizuálního editoru (Decap CMS) pro web Alerta.
-# Kolegové se přihlásí na /admin (e-mailem přes Netlify Identity) a upravují
-# texty, prodejny, tým i fotoalbum. Vše se ukládá do repozitáře a web se sám přegeneruje.
+# Kolegové se přihlásí na /admin svým GitHub účtem (musí mít přístup k repozitáři)
+# a upravují texty, prodejny, tým i fotoalbum. Vše se ukládá do repozitáře
+# a GitHub Pages web automaticky přegenerují.
 
 backend:
-  name: git-gateway
+  name: github
+  repo: tomasdvoji/Alerta1
   branch: main
+  # OAuth brána běží na Hangar workeru (endpointy /api/decap/auth a /api/decap/callback)
+  base_url: https://hangar-web-preview.webshowcase-tomas.workers.dev
+  auth_endpoint: /api/decap/auth
 
 # Pro lokální zkoušení bez přihlašování: odkomentujte řádek níže a spusťte `npx decap-server`.
 # local_backend: true

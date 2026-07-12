@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { media } from '../media';
 import album from '../data/editable/album.json';
 ---
 <Base title="Fotoalbum — Alerta s.r.o" description="Fotoalbum z našich teambuildingů, firemních výletů a dalších akcí. Podívejte se, jak se bavíme a poznáváme se lépe jako tým.">
@@ -15,7 +16,7 @@ import album from '../data/editable/album.json';
       <div class="album-grid">
         {album.items.map((p) => (
           <button class="album-tile" type="button" data-lightbox data-caption={p.caption} aria-label={`Zvětšit fotku: ${p.caption}`} data-reveal>
-            <img src={p.image} alt="" loading="lazy" />
+            <img src={media(p.image)} alt="" loading="lazy" />
           </button>
         ))}
       </div>

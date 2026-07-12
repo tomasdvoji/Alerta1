@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { media } from '../media';
 import team from '../data/editable/team.json';
 const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
 ---
@@ -17,7 +18,7 @@ const initials = (name: string) => name.split(' ').map((w) => w[0]).join('');
         {team.items.map((m) => (
           <article class="card team-card" data-reveal>
             {m.photo
-              ? <img class="avatar" src={m.photo} alt="" loading="lazy" />
+              ? <img class="avatar" src={media(m.photo)} alt="" loading="lazy" />
               : <div class="avatar" aria-hidden="true">{initials(m.name)}</div>}
             <h3>{m.name}</h3>
             <p class="muted">{m.role}</p>
