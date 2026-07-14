@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 
+const isNetlify = process.env.NETLIFY === 'true';
+
 export default defineConfig({
-  site: 'https://tomasdvoji.github.io',
-  base: '/Alerta1',
+  site: isNetlify ? process.env.URL : 'https://tomasdvoji.github.io',
+  base: isNetlify ? '/' : '/Alerta1',
 });
