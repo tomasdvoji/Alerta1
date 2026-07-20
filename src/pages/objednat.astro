@@ -10,7 +10,7 @@ times.push('18:00');
 
 // E-maily prodejen se do HTML nedávají přímo (spam boti) — jen id a jméno,
 // adresy si vezme skript z JSONu níže zakódované v base64.
-const shopMeta = shops.items.map((s) => ({ id: s.id, name: s.name, email: s.email || cfg.fallbackEmail }));
+const shopMeta = shops.items.map((s) => ({ id: s.id, name: s.name, email: s.email || cfg.fallbackEmail, address: s.address, hours: s.hours }));
 const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base64');
 ---
 <Base title={`${cfg.title} — Alerta s.r.o`} description={cfg.lead}>
@@ -69,6 +69,10 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
         <h2 class="grad-text">{cfg.successHeading}</h2>
         <p id="bs-summary"></p>
         <p class="muted" style="margin-top:10px">{cfg.successText}</p>
+        <p style="margin-top:14px">
+          <a class="btn btn-primary" id="bs-gcal" target="_blank" rel="noopener">Přidat do Google Kalendáře</a>
+          <a class="btn" id="bs-ics" download="objednavka-alerta.ics">Stáhnout do kalendáře (.ics)</a>
+        </p>
       </div>
     </div>
   </section>
@@ -94,6 +98,21 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
         var dateCz = d[2] + '. ' + d[1] + '. ' + d[0];
         var summary = 'Prodejna ' + shop.name + ', ' + dateCz + ' v ' + form.cas.value + ' hod.';
 
+        // termin = 30min slot; casy pro kalendar v lokalnim tvaru bez zony
+        var t = form.cas.value.split(':');
+        var start = new Date(form.datum.value + 'T' + ('0' + t[0]).slice(-2) + ':' + t[1] + ':00');
+        var end = new Date(start.getTime() + 30 * 60000);
+        function fmt(dt) {
+          return dt.getFullYear() + ('0' + (dt.getMonth() + 1)).slice(-2) + ('0' + dt.getDate()).slice(-2) +
+            'T' + ('0' + dt.getHours()).slice(-2) + ('0' + dt.getMinutes()).slice(-2) + '00';
+        }
+        var evTitle = 'Alerta — objednávka: ' + shop.name;
+        var gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+          '&text=' + encodeURIComponent(evTitle) +
+          '&dates=' + fmt(start) + '/' + fmt(end) +
+          '&location=' + encodeURIComponent(shop.address) +
+          '&details=' + encodeURIComponent(form.popis.value);
+
         var btn = document.getElementById('bf-submit');
         var errEl = document.getElementById('bf-error');
         if (!errEl.dataset.base) errEl.dataset.base = errEl.textContent;
@@ -109,14 +128,20 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
             _template: 'table',
             _captcha: 'false',
             _replyto: form.email.value,
-            _autoresponse: data.autoIntro + '\n\n' + summary + '\nS čím pomůžeme: ' + form.popis.value + '\n\n' + data.autoOutro,
+            _autoresponse: data.autoIntro + '\n\n' +
+              summary + '\n' +
+              'Adresa: ' + shop.address + '\n' +
+              'Otevírací doba: ' + shop.hours + '\n' +
+              'S čím pomůžeme: ' + form.popis.value + '\n\n' +
+              'Přidat do kalendáře: ' + gcalUrl + '\n\n' + data.autoOutro,
             'Prodejna': shop.name,
             'Den': dateCz,
             'Čas': form.cas.value,
             'Popis': form.popis.value,
             'Jméno': form.jmeno.value,
             'Telefon': form.telefon.value,
-            'E-mail': form.email.value
+            'E-mail': form.email.value,
+            'Do kalendáře': gcalUrl
           })
         }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
           .then(function (res) {
@@ -128,6 +153,13 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
               throw err;
             }
             document.getElementById('bs-summary').textContent = summary;
+            document.getElementById('bs-gcal').href = gcalUrl;
+            var ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Alerta//objednavka//CS\r\nBEGIN:VEVENT\r\n' +
+              'UID:' + fmt(start) + '-' + shop.id + '@alerta\r\n' +
+              'DTSTAMP:' + fmt(start) + '\r\nDTSTART:' + fmt(start) + '\r\nDTEND:' + fmt(end) + '\r\n' +
+              'SUMMARY:' + evTitle + '\r\nLOCATION:' + shop.address + '\r\n' +
+              'DESCRIPTION:' + form.popis.value.replace(/\n/g, '\\n') + '\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n';
+            document.getElementById('bs-ics').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
             form.hidden = true;
             document.getElementById('booking-success').hidden = false;
             window.scrollTo({ top: 0, behavior: 'smooth' });
