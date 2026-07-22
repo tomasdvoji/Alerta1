@@ -122,6 +122,7 @@ collections:
               - { name: "address", label: "Adresa", widget: "string" }
               - { name: "hours", label: "Otevírací doba", widget: "string" }
               - { name: "email", label: "E-mail prodejny (chodí sem objednávky)", widget: "string", required: false, hint: "Když je prázdný, objednávky chodí na centrální e-mail nastavený na stránce Objednání." }
+              - { name: "phone", label: "Telefon na prodejnu", widget: "string", required: false }
               - { name: "photo", label: "Fotka prodejny", widget: "image", required: false }
               - { name: "mapX", label: "Poloha na mapě — X", widget: "number", value_type: "int", hint: "Technické pole (0–600). Needitujte, pokud nemusíte." }
               - { name: "mapY", label: "Poloha na mapě — Y", widget: "number", value_type: "int", hint: "Technické pole (0–350). Needitujte, pokud nemusíte." }

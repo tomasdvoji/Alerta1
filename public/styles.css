@@ -615,6 +615,9 @@ img.avatar { object-fit: cover; }
 .shop-card h3 { padding: 18px 22px 0; }
 .shop-card p { padding: 4px 22px 0; font-size: 0.9rem; }
 .shop-card .shop-hours { color: var(--accent-text); font-weight: 600; font-size: 0.85rem; }
+.shop-card .shop-phone { font-size: 0.9rem; }
+.shop-card .shop-phone a { text-decoration: none; color: var(--text-dim); }
+.shop-card .shop-phone a:hover { color: var(--accent-text); }
 .shop-card .shop-book { padding: 14px 22px 22px; }
 .shop-photo {
   aspect-ratio: 16 / 10;

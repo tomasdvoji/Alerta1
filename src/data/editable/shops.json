@@ -1,16 +1,26 @@
-﻿{
+{
   "eyebrow": "Prodejny",
   "title": "Naše prodejny",
-  "lead": "9 prodejen po celé České republice. Přijďte – poradíme vám osobně.",
+  "lead": "19 prodejen po celé České republice. Přijďte – poradíme vám osobně.",
   "items": [
-    { "id": "jablonec", "name": "Jablonec nad Nisou", "address": "Mírové náměstí 12, 466 01 Jablonec nad Nisou", "hours": "Po–Pá 9:00–17:30 · So 9:00–12:00", "email": "", "photo": "https://picsum.photos/seed/alerta-jablonec/800/500", "mapX": 273, "mapY": 47 },
-    { "id": "mlada-boleslav", "name": "Mladá Boleslav", "address": "Staroměstské náměstí 8, 293 01 Mladá Boleslav", "hours": "Po–Pá 9:00–18:00 · So 9:00–12:00", "email": "", "photo": "https://picsum.photos/seed/alerta-boleslav/800/500", "mapX": 249, "mapY": 91 },
-    { "id": "decin", "name": "Děčín", "address": "Masarykovo náměstí 3, 405 02 Děčín", "hours": "Po–Pá 9:00–17:00", "email": "", "photo": "https://picsum.photos/seed/alerta-decin/800/500", "mapX": 184, "mapY": 38 },
-    { "id": "teplice", "name": "Teplice", "address": "Benešovo náměstí 5, 415 01 Teplice", "hours": "Po–Pá 9:00–17:30", "email": "", "photo": "https://picsum.photos/seed/alerta-teplice/800/500", "mapX": 154, "mapY": 59 },
-    { "id": "litomerice", "name": "Litoměřice", "address": "Mírové náměstí 21, 412 01 Litoměřice", "hours": "Po–Pá 9:00–17:00", "email": "", "photo": "https://picsum.photos/seed/alerta-litomerice/800/500", "mapX": 181, "mapY": 74 },
-    { "id": "dejvice", "name": "Praha-Dejvice", "address": "Vítězné náměstí 2, 160 00 Praha 6", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "email": "", "photo": "https://picsum.photos/seed/alerta-dejvice/800/500", "mapX": 204, "mapY": 134 },
-    { "id": "hostivar", "name": "Praha-Hostivař", "address": "Švehlova 1391/32, 102 00 Praha 10", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "email": "", "photo": "https://picsum.photos/seed/alerta-hostivar/800/500", "mapX": 216, "mapY": 141 },
-    { "id": "pisek", "name": "Písek", "address": "Velké náměstí 14, 397 01 Písek", "hours": "Po–Pá 9:00–17:00 · So 9:00–11:30", "email": "", "photo": "https://picsum.photos/seed/alerta-pisek/800/500", "mapX": 182, "mapY": 244 },
-    { "id": "klatovy", "name": "Klatovy", "address": "Náměstí Míru 9, 339 01 Klatovy", "hours": "Po–Pá 9:00–17:00", "email": "", "photo": "https://picsum.photos/seed/alerta-klatovy/800/500", "mapX": 107, "mapY": 232 }
+    { "id": "jablonec", "name": "Jablonec nad Nisou", "address": "Mírové náměstí 12, 466 01 Jablonec nad Nisou", "hours": "Po–Pá 9:00–17:30 · So 9:00–12:00", "email": "jablonec@alerta.cz", "phone": "732 220 484", "photo": "https://picsum.photos/seed/alerta-jablonec/800/500", "mapX": 273, "mapY": 47 },
+    { "id": "mlada-boleslav", "name": "Mladá Boleslav", "address": "Staroměstské náměstí 8, 293 01 Mladá Boleslav", "hours": "Po–Pá 9:00–18:00 · So 9:00–12:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-boleslav/800/500", "mapX": 249, "mapY": 91 },
+    { "id": "decin", "name": "Děčín", "address": "Masarykovo náměstí 3, 405 02 Děčín", "hours": "Po–Pá 9:00–17:00", "email": "decin@alerta.cz", "phone": "605 512 511", "photo": "https://picsum.photos/seed/alerta-decin/800/500", "mapX": 184, "mapY": 38 },
+    { "id": "teplice", "name": "Teplice", "address": "Benešovo náměstí 5, 415 01 Teplice", "hours": "Po–Pá 9:00–17:30", "email": "teplice@alerta.cz", "phone": "736 444 489", "photo": "https://picsum.photos/seed/alerta-teplice/800/500", "mapX": 154, "mapY": 59 },
+    { "id": "litomerice", "name": "Litoměřice", "address": "Mírové náměstí 21, 412 01 Litoměřice", "hours": "Po–Pá 9:00–17:00", "email": "litomerice@alerta.cz", "phone": "604 353 543", "photo": "https://picsum.photos/seed/alerta-litomerice/800/500", "mapX": 181, "mapY": 74 },
+    { "id": "dejvice", "name": "Praha-Dejvice", "address": "Vítězné náměstí 2, 160 00 Praha 6", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "email": "dejvice@alerta.cz", "phone": "736 718 800", "photo": "https://picsum.photos/seed/alerta-dejvice/800/500", "mapX": 204, "mapY": 134 },
+    { "id": "hostivar", "name": "Praha-Hostivař", "address": "Švehlova 1391/32, 102 00 Praha 10", "hours": "Po–Pá 9:00–19:00 · So 9:00–14:00", "email": "hostivar@alerta.cz", "phone": "736 151 571", "photo": "https://picsum.photos/seed/alerta-hostivar/800/500", "mapX": 216, "mapY": 141 },
+    { "id": "pisek", "name": "Písek", "address": "Velké náměstí 14, 397 01 Písek", "hours": "Po–Pá 9:00–17:00 · So 9:00–11:30", "email": "pisek@alerta.cz", "phone": "605 999 309", "photo": "https://picsum.photos/seed/alerta-pisek/800/500", "mapX": 182, "mapY": 244 },
+    { "id": "klatovy", "name": "Klatovy", "address": "Náměstí Míru 9, 339 01 Klatovy", "hours": "Po–Pá 9:00–17:00", "email": "klatovy@alerta.cz", "phone": "733 414 842", "photo": "https://picsum.photos/seed/alerta-klatovy/800/500", "mapX": 107, "mapY": 232 },
+    { "id": "rychnov", "name": "Rychnov nad Kněžnou", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "rychnov@asistel.cz", "phone": "605 113 377", "photo": "https://picsum.photos/seed/alerta-rychnov/800/500", "mapX": 374, "mapY": 123 },
+    { "id": "benesov", "name": "Benešov", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "benesov@asistel.cz", "phone": "604 727 323", "photo": "https://picsum.photos/seed/alerta-benesov/800/500", "mapX": 229, "mapY": 175 },
+    { "id": "vrchlabi", "name": "Vrchlabí", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "vrchlabi@asistel.cz", "phone": "603 512 517", "photo": "https://picsum.photos/seed/alerta-vrchlabi/800/500", "mapX": 314, "mapY": 59 },
+    { "id": "turnov", "name": "Turnov", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-turnov/800/500", "mapX": 272, "mapY": 65 },
+    { "id": "trebic", "name": "Třebíč", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "trebic@asistel.cz", "phone": "737 828 545", "photo": "https://picsum.photos/seed/alerta-trebic/800/500", "mapX": 338, "mapY": 251 },
+    { "id": "jindrichuv-hradec", "name": "Jindřichův Hradec", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "jindrichuvhradec@asistel.cz", "phone": "734 206 169", "photo": "https://picsum.photos/seed/alerta-jhradec/800/500", "mapX": 257, "mapY": 262 },
+    { "id": "trutnov", "name": "Trutnov", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-trutnov/800/500", "mapX": 341, "mapY": 69 },
+    { "id": "nachod", "name": "Náchod", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "nachod1@asistel.cz", "phone": "603 819 417", "photo": "https://picsum.photos/seed/alerta-nachod/800/500", "mapX": 364, "mapY": 88 },
+    { "id": "litomysl", "name": "Litomyšl", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-litomysl/800/500", "mapX": 378, "mapY": 163 },
+    { "id": "usti-nad-orlici", "name": "Ústí nad Orlicí", "address": "", "hours": "Po–Pá 9:00–17:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-usti/800/500", "mapX": 385, "mapY": 149 }
   ]
 }
