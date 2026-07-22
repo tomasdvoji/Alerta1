@@ -48,6 +48,7 @@ const base = baseRaw.endsWith('/') ? baseRaw.slice(0, -1) : baseRaw;
       </defs>
     </svg>
     <div class="container hero-inner">
+      <p class="partner-badge"><img src={base + "/tmobile-t.svg"} alt="" width="16" height="19">Oficiální partner T-Mobile</p>
       <h1>{heroWords.map((w, i) => <><span class="w grad-text">{w}</span>{i < heroWords.length - 1 ? ' ' : ''}</>)}</h1>
       <p class="hero-sub">{home.heroSub}</p>
       <div class="hero-cta">

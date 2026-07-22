@@ -37,7 +37,7 @@ const { title, description } = Astro.props;
 <body>
   <header class="site-nav">
     <div class="container">
-      <a class="logo" href={base + "/"}>Alerta<span>.</span></a>
+      <a class="logo" href={base + "/"}>Alerta<span>.</span><img class="logo-tmobile" src={base + "/tmobile-t.svg"} alt="T-Mobile" width="20" height="24"></a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Otevřít menu">☰</button>
       <ul class="nav-links" id="nav-links" data-nav-links>
         <li><a href={base + "/#prodejny"}>Prodejny</a></li>
@@ -56,7 +56,7 @@ const { title, description } = Astro.props;
   <footer class="site-footer">
     <div class="container">
       <div>
-        <a class="logo" href={base + "/"}>Alerta<span>.</span></a>
+        <a class="logo" href={base + "/"}>Alerta<span>.</span><img class="logo-tmobile" src={base + "/tmobile-t.svg"} alt="T-Mobile" width="20" height="24"></a>
         <p>{site.name}<br>{site.address}<br>IČO: {site.ico} | DIČ: {site.dic}<br>{site.partnerNote}</p>
       </div>
       <ul>

@@ -23,6 +23,9 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font);
   background: var(--bg);
+  /* jemny sedy teckovany rastr — at neni bile pozadi tak "ciste" */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -170,6 +173,24 @@ html.headings-white .grad-text {
   text-decoration: none;
 }
 .logo span { color: var(--accent); }
+.logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-tmobile { height: 1.15em; width: auto; }
+
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+.partner-badge img { height: 1em; width: auto; }
 
 .nav-links { display: flex; gap: 28px; list-style: none; }
 .nav-links a {

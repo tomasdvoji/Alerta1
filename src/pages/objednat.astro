@@ -124,7 +124,7 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-            _subject: 'Nová objednávka: ' + shop.name + ' — ' + dateCz + ' ' + form.cas.value,
+            _subject: 'Zákazník objednán k nám na prodejnu',
             _template: 'table',
             _captcha: 'false',
             _replyto: form.email.value,
