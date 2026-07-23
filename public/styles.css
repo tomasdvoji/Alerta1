@@ -172,8 +172,14 @@ html.headings-white .grad-text {
   letter-spacing: -0.02em;
   text-decoration: none;
 }
-.logo span { color: var(--accent); }
 .logo { display: inline-flex; align-items: center; gap: 10px; }
+/* svisla oddelovaci carka mezi "Alerta" a T logem */
+.logo-sep {
+  width: 1.5px;
+  height: 1em;
+  background: var(--accent);
+  border-radius: 1px;
+}
 .logo-tmobile { height: 1.15em; width: auto; }
 
 .partner-badge {
