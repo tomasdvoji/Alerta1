@@ -277,8 +277,9 @@ html.headings-white .grad-text {
   min-height: calc(100dvh - 64px);
   display: flex;
   align-items: center;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
-  background-size: 34px 34px;
+  /* fotku prodejny dodava inline style v index.astro */
+  background-size: cover;
+  background-position: center;
 }
 .hero::after {
   content: "";
@@ -286,8 +287,17 @@ html.headings-white .grad-text {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(255, 255, 255, 0.9), transparent 55%);
+  /* tmavy prekryv, at je nadpis na fotce citelny */
+  background: linear-gradient(rgba(12, 8, 12, 0.55), rgba(12, 8, 12, 0.68));
 }
+
+/* text na fotce — bily, at je citelny */
+.hero .grad-text, html.headings-white .hero .grad-text { color: #fff; }
+.hero h1 { text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45); }
+.hero .hero-sub { color: rgba(255, 255, 255, 0.88); }
+.hero .partner-badge { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.35); }
+.hero .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.55); }
+.hero .btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
 .spotlight {
   position: absolute;
   top: -40%;
@@ -345,15 +355,6 @@ html.headings-white .grad-text {
   font-size: 1.05rem;
 }
 .hero-cta { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-.hero-photo {
-  margin: 56px auto 0;
-  width: min(880px, 100%);
-  height: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-}
 
 @media (prefers-reduced-motion: reduce) {
   .spotlight { opacity: 1; transform: translate(-50%, -40%); }

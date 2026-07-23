@@ -16,7 +16,7 @@ const baseRaw = import.meta.env.BASE_URL;
 const base = baseRaw.endsWith('/') ? baseRaw.slice(0, -1) : baseRaw;
 ---
 <Base title={`${site.name} — ${site.claim.replace(/\.$/, '')}`} description={`${site.name} je oficiálním partnerem T-Mobile Czech Republic. Tarify, telefony, internet i příslušenství — vše pod jednou střechou.`}>
-  <section class="hero" id="uvod">
+  <section class="hero" id="uvod" style={`background-image:url('${base}/uploads/hero-prodejna.jpeg')`}>
     <svg class="spotlight" viewBox="0 0 3787 2842" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g filter="url(#spotlight-blur)">
         <ellipse cx="1924.71" cy="273.501" rx="1924.71" ry="273.501"
@@ -56,7 +56,6 @@ const base = baseRaw.endsWith('/') ? baseRaw.slice(0, -1) : baseRaw;
         <a class="btn btn-ghost" href="#sluzby">{home.btnServices}</a>
         <a class="btn btn-ghost" href={base + "/kariera"}>{home.btnCareer}</a>
       </div>
-      <img class="hero-photo" src={base + "/uploads/hero-prodejna.jpeg"} alt="Interiér partnerské prodejny T-Mobile" width="1268" height="960" data-reveal>
     </div>
   </section>
 
