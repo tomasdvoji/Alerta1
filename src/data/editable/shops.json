@@ -3,7 +3,7 @@
   "title": "Naše prodejny",
   "lead": "19 prodejen po celé České republice. Přijďte – poradíme vám osobně.",
   "items": [
-    { "id": "jablonec", "name": "Jablonec nad Nisou", "address": "Mírové náměstí 12, 466 01 Jablonec nad Nisou", "hours": "Po–Pá 9:00–17:30 · So 9:00–12:00", "email": "jablonec@alerta.cz", "phone": "732 220 484", "photo": "https://picsum.photos/seed/alerta-jablonec/800/500", "mapX": 273, "mapY": 47 },
+    { "id": "jablonec", "name": "Jablonec nad Nisou", "address": "Mírové náměstí 12, 466 01 Jablonec nad Nisou", "hours": "Po–Pá 9:00–17:30 · So 9:00–12:00", "email": "vitekmoravec@icloud.com", "phone": "732 220 484", "photo": "https://picsum.photos/seed/alerta-jablonec/800/500", "mapX": 273, "mapY": 47 },
     { "id": "mlada-boleslav", "name": "Mladá Boleslav", "address": "Staroměstské náměstí 8, 293 01 Mladá Boleslav", "hours": "Po–Pá 9:00–18:00 · So 9:00–12:00", "email": "", "phone": "", "photo": "https://picsum.photos/seed/alerta-boleslav/800/500", "mapX": 249, "mapY": 91 },
     { "id": "decin", "name": "Děčín", "address": "Masarykovo náměstí 3, 405 02 Děčín", "hours": "Po–Pá 9:00–17:00", "email": "decin@alerta.cz", "phone": "605 512 511", "photo": "https://picsum.photos/seed/alerta-decin/800/500", "mapX": 184, "mapY": 38 },
     { "id": "teplice", "name": "Teplice", "address": "Benešovo náměstí 5, 415 01 Teplice", "hours": "Po–Pá 9:00–17:30", "email": "teplice@alerta.cz", "phone": "736 444 489", "photo": "https://picsum.photos/seed/alerta-teplice/800/500", "mapX": 154, "mapY": 59 },
