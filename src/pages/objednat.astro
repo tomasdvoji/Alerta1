@@ -83,7 +83,8 @@ const shopMetaB64 = Buffer.from(JSON.stringify(shopMeta), 'utf8').toString('base
       var form = document.getElementById('booking-form');
       if (!form) return;
       var data = JSON.parse(document.getElementById('booking-data').textContent);
-      var shops = JSON.parse(atob(data.shopsB64));
+      // atob vraci bajty jako latin1 — UTF-8 (ceske znaky) je nutne dekodovat pres TextDecoder
+      var shops = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(data.shopsB64), function (c) { return c.charCodeAt(0); })));
 
       // predvyber prodejny z ?prodejna=id + minimalni datum = dnesek
       var pre = new URLSearchParams(location.search).get('prodejna');
