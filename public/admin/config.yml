@@ -139,6 +139,9 @@ collections:
           - { name: "title", label: "Nadpis stránky", widget: "string" }
           - { name: "lead", label: "Úvodní text", widget: "text" }
           - { name: "fallbackEmail", label: "Centrální e-mail pro objednávky", widget: "string", hint: "Sem chodí objednávky z prodejen, které nemají vyplněný vlastní e-mail." }
+          - { name: "emailjsService", label: "EmailJS — Service ID", widget: "string", hint: "Technické pole, neměnit." }
+          - { name: "emailjsTemplate", label: "EmailJS — Template ID", widget: "string", hint: "Technické pole, neměnit." }
+          - { name: "emailjsPublicKey", label: "EmailJS — Public Key", widget: "string", hint: "Technické pole, neměnit." }
           - { name: "successHeading", label: "Potvrzení — nadpis", widget: "string" }
           - { name: "successText", label: "Potvrzení — text", widget: "text" }
           - { name: "errorText", label: "Chybová hláška", widget: "text" }
