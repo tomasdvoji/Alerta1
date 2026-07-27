@@ -3,16 +3,16 @@
   "title": "Za každou prodejnou stojí skuteční lidé.",
   "lead": "Nejsme bezejmenné call centrum. Jsme tým konkrétních lidí – každý se jménem, svou specializací a svými zákazníky, které zná. Podívejte se, kdo stojí za našimi prodejnami.",
   "items": [
-    { "name": "Ilona Jindráková", "role": "Regionální manažerka", "photo": "" },
-    { "name": "Jiří Brecko", "role": "Regionální manažer", "photo": "" },
-    { "name": "Lukáš Erba", "role": "Regionální manažer", "photo": "" },
-    { "name": "Martin Klaban", "role": "Vedoucí prodejny · Jablonec nad Nisou", "photo": "" },
-    { "name": "Natálie Poplová", "role": "Vedoucí prodejny · Mladá Boleslav", "photo": "" },
-    { "name": "Jana Kindlová", "role": "Vedoucí prodejny · Teplice", "photo": "" },
+    { "name": "Ilona Jindráková", "role": "Regionální manažerka", "photo": "/uploads/zamestnanci/ilona-jindrakova.jpeg" },
+    { "name": "Jiří Brecko", "role": "Regionální manažer", "photo": "/uploads/zamestnanci/jiri-brecko.jpeg" },
+    { "name": "Lukáš Erba", "role": "Regionální manažer", "photo": "/uploads/zamestnanci/lukas-erba.jpeg" },
+    { "name": "Martin Klaban", "role": "Vedoucí prodejny · Jablonec nad Nisou", "photo": "/uploads/zamestnanci/martin-klaban.jpeg" },
+    { "name": "Natálie Poplová", "role": "Vedoucí prodejny · Mladá Boleslav", "photo": "/uploads/zamestnanci/natalie-poplova.jpeg" },
+    { "name": "Jana Kindlová", "role": "Vedoucí prodejny · Teplice", "photo": "/uploads/zamestnanci/jana-kindlova.jpeg" },
     { "name": "Romana Karlíková", "role": "Vedoucí prodejny · Praha 10-Hostivař", "photo": "" },
-    { "name": "Marek Bureš", "role": "Vedoucí prodejny · Litoměřice", "photo": "" },
+    { "name": "Marek Bureš", "role": "Vedoucí prodejny · Litoměřice", "photo": "/uploads/zamestnanci/marek-bures.jpeg" },
     { "name": "Zdeněk Čechák", "role": "Vedoucí prodejny · Děčín", "photo": "" },
-    { "name": "Ivana Rádlová", "role": "Vedoucí prodejny · Klatovy", "photo": "" },
+    { "name": "Ivana Rádlová", "role": "Vedoucí prodejny · Klatovy", "photo": "/uploads/zamestnanci/ivana-radlova.jpeg" },
     { "name": "Tomáš Ryba", "role": "Vedoucí prodejny · Praha-Dejvice", "photo": "" }
   ]
 }
