@@ -284,7 +284,7 @@ html.headings-white .grad-text {
   display: flex;
   align-items: center;
 }
-/* fotka prodejny (--hero-img z index.astro) — jemne rozmazana, at neni videt male rozliseni */
+/* fotka prodejny (--hero-img z index.astro) — ostra, bez rozmazani */
 .hero::before {
   content: "";
   position: absolute;
@@ -293,8 +293,6 @@ html.headings-white .grad-text {
   background-image: var(--hero-img);
   background-size: cover;
   background-position: center;
-  filter: blur(6px) saturate(1.15);
-  transform: scale(1.06);
 }
 .hero::after {
   content: "";
