@@ -746,27 +746,33 @@ img.avatar { object-fit: cover; }
   display: inline-block;
 }
 .shop-lb-arrow {
-  position: absolute;
+  position: fixed; /* u kraje obrazovky, ne u fotky – ať jsou vždy na stejném místě */
   top: 50%;
   transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(226, 0, 116, 0.85);
   color: #fff;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 2rem;
   line-height: 1;
   display: grid;
   place-items: center;
-  transition: background 0.2s var(--ease);
-  z-index: 2;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  z-index: 3;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
-.shop-lb-arrow:hover { background: rgba(226, 0, 116, 0.7); }
+.shop-lb-arrow:hover { background: rgba(226, 0, 116, 1); transform: translateY(-50%) scale(1.08); }
 .shop-lb-arrow[hidden] { display: none; }
-.shop-lb-prev { left: 10px; }
-.shop-lb-next { right: 10px; }
+.shop-lb-prev { left: 24px; }
+.shop-lb-next { right: 24px; }
+@media (max-width: 640px) {
+  .shop-lb-arrow { width: 44px; height: 44px; font-size: 1.5rem; }
+  .shop-lb-prev { left: 10px; }
+  .shop-lb-next { right: 10px; }
+}
 
 .lightbox-close {
   position: absolute;
