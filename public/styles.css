@@ -728,7 +728,23 @@ img.avatar { object-fit: cover; }
   font-weight: 600;
   pointer-events: none;
 }
-.shop-lb-content img { object-fit: contain; background: #000; }
+.shop-lb-content.lightbox-content {
+  aspect-ratio: auto;
+  background: transparent;
+  border: 0;
+  display: block;
+  text-align: center;
+}
+.shop-lb-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: inline-block;
+}
 .shop-lb-arrow {
   position: absolute;
   top: 50%;
