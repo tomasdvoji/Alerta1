@@ -1,18 +1,84 @@
-﻿{
+{
   "eyebrow": "Tým",
   "title": "Za každou prodejnou stojí skuteční lidé.",
   "lead": "Nejsme bezejmenné call centrum. Jsme tým konkrétních lidí – každý se jménem, svou specializací a svými zákazníky, které zná. Podívejte se, kdo stojí za našimi prodejnami.",
   "items": [
-    { "name": "Ilona Jindráková", "role": "Regionální manažerka", "photo": "/uploads/zamestnanci/ilona-jindrakova-v3.jpeg" },
-    { "name": "Jiří Brecko", "role": "Regionální manažer", "photo": "/uploads/zamestnanci/jiri-brecko-v3.jpeg" },
-    { "name": "Lukáš Erba", "role": "Regionální manažer", "photo": "/uploads/zamestnanci/lukas-erba-v3.jpeg" },
-    { "name": "Martin Klaban", "role": "Vedoucí prodejny · Jablonec nad Nisou", "photo": "/uploads/zamestnanci/martin-klaban-v3.jpeg" },
-    { "name": "Natálie Poplová", "role": "Vedoucí prodejny · Mladá Boleslav", "photo": "/uploads/zamestnanci/natalie-poplova-v3.jpeg" },
-    { "name": "Jana Kindlová", "role": "Vedoucí prodejny · Teplice", "photo": "/uploads/zamestnanci/jana-kindlova-v3.jpeg" },
-    { "name": "Romana Karlíková", "role": "Vedoucí prodejny · Praha 10-Hostivař", "photo": "" },
-    { "name": "Marek Bureš", "role": "Vedoucí prodejny · Litoměřice", "photo": "/uploads/zamestnanci/marek-bures-v3.jpeg" },
-    { "name": "Zdeněk Čechák", "role": "Vedoucí prodejny · Děčín", "photo": "" },
-    { "name": "Ivana Rádlová", "role": "Vedoucí prodejny · Klatovy", "photo": "/uploads/zamestnanci/ivana-radlova-v3.jpeg" },
-    { "name": "Tomáš Ryba", "role": "Vedoucí prodejny · Praha-Dejvice", "photo": "" }
+    {
+      "name": "Ilona Jindráková",
+      "role": "Regionální manažerka",
+      "photo": "/uploads/zamestnanci/ilona-jindrakova-v3.jpeg",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "name": "Jiří Brecko",
+      "role": "Regionální manažer",
+      "photo": "/uploads/zamestnanci/jiri-brecko-v3.jpeg",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "name": "Lukáš Erba",
+      "role": "Regionální manažer",
+      "photo": "/uploads/zamestnanci/lukas-erba-v3.jpeg",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "name": "Martin Klaban",
+      "role": "Vedoucí prodejny · Jablonec nad Nisou",
+      "photo": "/uploads/zamestnanci/martin-klaban-v3.jpeg",
+      "email": "jablonec@alerta.cz",
+      "phone": "732 220 484"
+    },
+    {
+      "name": "Natálie Poplová",
+      "role": "Vedoucí prodejny · Mladá Boleslav",
+      "photo": "/uploads/zamestnanci/natalie-poplova-v3.jpeg",
+      "email": "",
+      "phone": ""
+    },
+    {
+      "name": "Jana Kindlová",
+      "role": "Vedoucí prodejny · Teplice",
+      "photo": "/uploads/zamestnanci/jana-kindlova-v3.jpeg",
+      "email": "teplice@alerta.cz",
+      "phone": "736 444 489"
+    },
+    {
+      "name": "Romana Karlíková",
+      "role": "Vedoucí prodejny · Praha 10-Hostivař",
+      "photo": "",
+      "email": "hostivar@alerta.cz",
+      "phone": "736 151 571"
+    },
+    {
+      "name": "Marek Bureš",
+      "role": "Vedoucí prodejny · Litoměřice",
+      "photo": "/uploads/zamestnanci/marek-bures-v4.jpeg",
+      "email": "litomerice@alerta.cz",
+      "phone": "604 353 543"
+    },
+    {
+      "name": "Zdeněk Čechák",
+      "role": "Vedoucí prodejny · Děčín",
+      "photo": "",
+      "email": "decin@alerta.cz",
+      "phone": "605 512 511"
+    },
+    {
+      "name": "Ivana Rádlová",
+      "role": "Vedoucí prodejny · Klatovy",
+      "photo": "/uploads/zamestnanci/ivana-radlova-v3.jpeg",
+      "email": "klatovy@alerta.cz",
+      "phone": "733 414 842"
+    },
+    {
+      "name": "Tomáš Ryba",
+      "role": "Vedoucí prodejny · Praha-Dejvice",
+      "photo": "",
+      "email": "dejvice@alerta.cz",
+      "phone": "736 718 800"
+    }
   ]
 }
