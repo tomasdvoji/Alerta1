@@ -1,0 +1,11 @@
+// Worker pro odesilani e-mailu pres Resend (spolecny pro Alertu i Asistel).
+// Po nasazeni: npx wrangler secret put RESEND_API_KEY
+{
+  "name": "mail",
+  "main": "index.js",
+  "compatibility_date": "2026-07-01",
+  "vars": {
+    "FROM_ALERTA": "Alerta <objednavky@alerta.cz>",
+    "FROM_ASISTEL": "Asistel <objednavky@asistel.cz>"
+  }
+}
