@@ -1,5 +1,5 @@
 // Cloudflare Worker: posila e-maily pres Resend (tajny klic zustava na serveru).
-// POST /send  { site, to, reply_to, subject, html }
+// POST /send  { site, to, reply_to, subject, html, attachments?: [{filename, content(base64)}] }
 // Secrets/vars (wrangler secret put): RESEND_API_KEY, FROM_ALERTA, FROM_ASISTEL
 // Nasazeni: cd mail-worker && npx wrangler deploy
 
@@ -38,6 +38,18 @@ export default {
       return new Response('{"error":"bad request"}', { status: 400, headers });
     }
 
+    // prilohy (zivotopis z naboroveho formulare): max 1 soubor, ~5 MB
+    let attachments;
+    if (Array.isArray(b.attachments) && b.attachments.length) {
+      const a = b.attachments[0];
+      const name = String((a && a.filename) || 'priloha').replace(/[^\w. ()-]/g, '').slice(0, 100);
+      const content = String((a && a.content) || '');
+      if (!content || content.length > 7500000 || !/^[A-Za-z0-9+/=]+$/.test(content.slice(0, 1000))) {
+        return new Response('{"error":"bad attachment"}', { status: 400, headers });
+      }
+      attachments = [{ filename: name, content }];
+    }
+
     const r = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: 'Bearer ' + (env.RESEND_API_KEY || env['RESEND_API_KEY¨']), 'Content-Type': 'application/json' },
@@ -47,6 +59,7 @@ export default {
         reply_to: email.test(b.reply_to || '') ? b.reply_to : undefined,
         subject: String(b.subject).slice(0, 200),
         html: String(b.html),
+        attachments,
       }),
     });
     const text = await r.text();
