@@ -1,3 +1,53 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "tmobile-partak-pisek",
+      "title": "🆘 HLEDÁME T-MOBILE PARŤÁKA/ČKU",
+      "misto": "Písek",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "tmobile-partak-jablonec",
+      "title": "🆘 HLEDÁME T-MOBILE PARŤÁKA/ČKU",
+      "misto": "Jablonec nad Nisou",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "tmobile-partak-mlada-boleslav",
+      "title": "🆘 HLEDÁME T-MOBILE PARŤÁKA/ČKU",
+      "misto": "Mladá Boleslav",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "tmobile-partak-praha-dejvice",
+      "title": "🆘 HLEDÁME T-MOBILE PARŤÁKA/ČKU",
+      "misto": "Praha-Dejvice",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "tmobile-partak-praha-hostivar",
+      "title": "🆘 HLEDÁME T-MOBILE PARŤÁKA/ČKU",
+      "misto": "Praha-Hostivař",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "prodejce-mlada-boleslav",
+      "title": "Prodejce na prodejně T-Mobile",
+      "misto": "Mladá Boleslav",
+      "typ": "Plný úvazek",
+      "text": ""
+    },
+    {
+      "id": "trener-obchodnich-dovednosti",
+      "title": "Trenér/ka obchodních dovedností",
+      "misto": "Praha",
+      "typ": "Plný úvazek",
+      "text": "Ukaž našim obchodníkům, co v nich je. Hledáme trenéra/ku obchodních dovedností pro naše prodejní týmy T-Mobile po celé České republice — školení, koučink přímo na prodejnách a rozvoj prodejních dovedností. Mzda 50 000–100 000 Kč podle zkušeností a výsledků."
+    }
+  ]
 }
