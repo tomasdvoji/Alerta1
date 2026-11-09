@@ -4,6 +4,10 @@
   "lead": "Teambuildingy, firemní výlety nebo jen společná večeře – pravidelně vyrážíme ven jako tým. Věříme, že dobrá parta dělá dobrou práci, a proto investujeme do akcí, kde si každý odpočine, zasměje se a lépe pozná své kolegy.",
   "items": [
     {
+      "slug": "sazava-2026",
+      "caption": "Podzimní firemní akce – Sázava 2026"
+    },
+    {
       "slug": "liptov-2012",
       "caption": "Cesta do neznáma – Liptov 2012"
     },
